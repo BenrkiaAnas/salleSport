@@ -1,0 +1,65 @@
+package entities;
+
+import javax.persistence.*;
+
+@Entity
+public class Promotion {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id_promo;
+	private Double discount;
+	private Long statut;
+	
+	
+	public Promotion() {
+		super();
+	}
+
+
+	public Promotion(Long id_promo, Double discount, Long statut) {
+		super();
+		this.id_promo = id_promo;
+		this.discount = discount;
+		this.statut = statut;
+	}
+
+
+	public Long getId_promo() {
+		return id_promo;
+	}
+
+
+	public void setId_promo(Long id_promo) {
+		this.id_promo = id_promo;
+	}
+
+
+	public Double getDiscount() {
+		return discount;
+	}
+
+
+	public void setDiscount(Double discount) {
+		this.discount = discount;
+	}
+
+
+	public Long getStatut() {
+		return statut;
+	}
+
+
+	public void setStatut(Long statut) {
+		this.statut = statut;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Promotion [id_promo=" + id_promo + ", discount=" + discount + ", statut=" + statut + "]";
+	}
+	
+	
+
+}
