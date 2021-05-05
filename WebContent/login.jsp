@@ -38,7 +38,7 @@
                                             <span>Veuillez vous connecter à votre compte ci-dessous.</span>
                                         </h4>
                                     </div>
-                                    <form class="" method="Post" action="login">
+                                    <form class="" method="POST" action="">
                                         <div class="form-row">
                                             <div class="col-md-12">
                                                 <div class="position-relative form-group">
