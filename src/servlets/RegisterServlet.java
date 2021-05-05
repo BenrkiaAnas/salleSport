@@ -94,7 +94,7 @@ public class RegisterServlet extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("personne", personnePlan);
 					
-					request.getRequestDispatcher("Admin/dashboard.jsp").forward(request, response);
+					response.sendRedirect(request.getContextPath() + "/dashboard");
 					
 					
 				}

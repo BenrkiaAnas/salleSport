@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet{
 			{
 				HttpSession session = request.getSession();
 				session.setAttribute("personne", personneLogged);
-				request.getRequestDispatcher("Admin/dashboard.jsp").forward(request, response);
+				response.sendRedirect(request.getContextPath() + "/dashboard");
 
 			}
 		}
