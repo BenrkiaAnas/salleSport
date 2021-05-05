@@ -1,26 +1,28 @@
-package servlets.admin.plans;
+package servlets.admin.gerants;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.Type_abonnementRepository;
-import entities.Type_abonnement;
+import dao.AbonnementRepository;
+import entities.Abonnement;
 
 /**
- * Servlet implementation class CreatePlan
+ * Servlet implementation class ListerGerant
  */
-@WebServlet("/createPlan")
-public class CreatePlan extends HttpServlet {
+@WebServlet("/listeGerant")
+public class ListerGerant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreatePlan() {
+    public ListerGerant() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,8 +32,10 @@ public class CreatePlan extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Admin/Plan/create.jsp").forward(request, response);
-
+		AbonnementRepository abonnementRepository = new AbonnementRepository();
+		List<Abonnement> abonnements = abonnementRepository.findAll();
+		request.setAttribute("abonnements", abonnements);
+		request.getRequestDispatcher("Admin/Gerant/liste.jsp").forward(request, response);
 	}
 
 	/**
@@ -39,14 +43,7 @@ public class CreatePlan extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	    Type_abonnementRepository abonnementRepository = new Type_abonnementRepository();
-	    String nom = request.getParameter("nom");
-	    Double prix = Double.parseDouble(request.getParameter("prix"));
-		String description = request.getParameter("description");
-	    Type_abonnement plan = new Type_abonnement(null,nom, prix, description, null,1l);
-	    abonnementRepository.create(plan);
-	    response.sendRedirect(request.getContextPath() + "/listPlan");
+		doGet(request, response);
 	}
-	
 
 }

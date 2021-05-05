@@ -1336,28 +1336,27 @@
                                         <div class="position-relative row form-group">
                                             <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
                                             <div class="col-sm-10">
-                                                <label for="Nom" class=" col-form-label">basic</label>
+                                                <label for="Nom" class=" col-form-label">${requestScope.plan['nom_type']}</label>
                                             </div>
                                         </div>
 
                                         <div class="position-relative row form-group">
-                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                                            <label for="Prix" class="col-sm-2 col-form-label">Prix</label>
                                             <div class="col-sm-10" style="padding-top: 7px">
-                                                <p for="Description" class=" ">c'est un plan normale</p>
+                                                <p for="Prix" class=" ">${requestScope.plan['prix']}</p>
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
-                                            <label for="Image" class="col-sm-2 col-form-label">Image</label>
-                                            <div class="col-sm-10">
-                                             <div>
-                                             	<img alt="" src="./images/football-soccer.jpg" style="width: 250px;height: 150px">
-                                             </div>
+                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                                            <div class="col-sm-10" style="padding-top: 7px">
+                                                <p for="Description" class=" ">${requestScope.plan['desc_type']}</p>
                                             </div>
                                         </div>
+
                                         <div class="position-relative row form-group">
                                             <label for="check" class="col-sm-2 col-form-label">Status</label>
                                             <div class="col-sm-10">
-                                                <label for="check" class=" col-form-label">Activé</label>
+                                                <label for="check" class=" col-form-label">${requestScope.plan['statut'] == 1 ? 'Activer' : 'Desactiver'}</label>
 
                                             </div>
                                         <div>
