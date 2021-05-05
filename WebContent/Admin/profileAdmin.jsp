@@ -1338,19 +1338,19 @@
                                         <div class="position-relative row form-group">
                                             <label for="Nomgerant" class="col-sm-2 col-form-label">Nom</label>
                                             <div class="col-sm-10">
-                                                <input name="nom" value="${requestScope.currentUser}" id="Nomg" placeholder="Nom de Gérant" type="text" class="form-control">
+                                                <input name="nom" value="${requestScope.currentUser['nom']}" id="Nomg" placeholder="Nom de Gérant" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="Prenomgerant" class="col-sm-2 col-form-label">Prénom</label>
                                             <div class="col-sm-10">
-                                                <input name="prenom" value="" id="Prenomg" placeholder="Prénom de Gérant" type="text" class="form-control">
+                                                <input name="prenom" value="${requestScope.currentUser['prenom']}" id="Prenomg" placeholder="Prénom de Gérant" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="Nomgerant" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input name="email" value="" id="Emailg" placeholder="Email" type="text" class="form-control">
+                                                <input name="email" value="${requestScope.currentUser['email']}" id="Emailg" placeholder="Email" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
@@ -1359,17 +1359,7 @@
                                                 <input name="mdp"  id="Emailg" placeholder="Mot de Passe" type="password" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="position-relative row form-group">
-                                            <label for="check" class="col-sm-2 col-form-label">Status</label>
-                                            <div class="col-sm-10">
-                                                <div class="position-relative form-check">
-                                                    <label class="form-check-label">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        <div>
-                                        </div>
-                                      </div>
+                                     
 
                                         <div class="position-relative row form-check">
                                             <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">                                              
