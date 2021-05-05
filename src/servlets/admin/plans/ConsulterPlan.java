@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.Type_abonnementRepository;
+import entities.Type_abonnement;
+
 /**
  * Servlet implementation class ConsulterPlan
  */
@@ -27,6 +30,10 @@ public class ConsulterPlan extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Type_abonnementRepository abonnementRepository =new Type_abonnementRepository();
+		Long id = Long.parseLong(request.getParameter("consulter"));
+		Type_abonnement plan =abonnementRepository.find(id);
+		request.setAttribute("plan", plan);
 		request.getRequestDispatcher("Admin/Plan/consulter.jsp").forward(request, response);
 	}
 

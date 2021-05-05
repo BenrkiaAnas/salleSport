@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!doctype html>
+    
+<!DOCTYPE html>
 <html lang="en">
 
 
 
 
 <head>
+      <title>Consultation de Gérant</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -1321,7 +1323,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Modifier Plan
+                                <div>Consulter Gérant
 
                                 </div>
                             </div>
@@ -1333,45 +1335,43 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
 
-                                    <form class="" method="POST" action="">
-                                      <div class="position-relative row form-group">
-                                          <label for="nomplan" class="col-sm-2 col-form-label">Nom plan</label>
-                                          <div class="col-sm-10">
-                                              <input name="nom" id="nomplan" value="${requestScope.plan['nom_type']}" placeholder="Nom de plan" type="text" class="form-control">
-                                          </div>
-                                      </div>
+                                    <form class="">
                                         <div class="position-relative row form-group">
-                                            <label for="prixplan" class="col-sm-2 col-form-label">prix plan</label>
+                                            <label for="Nom" class="col-sm-2 col-form-label">Nom Gérant</label>
                                             <div class="col-sm-10">
-                                                <input name="prix" id="prixplan" value="${requestScope.plan['prix']}" placeholder="Prix de plan" type="text" class="form-control">
+                                                <label for="NomG" class=" col-form-label">${requestScope.gerant['nom']}</label>
                                             </div>
                                         </div>
-
                                         <div class="position-relative row form-group">
-                                            <label for="Description" class="col-sm-2 col-form-label">Description plan</label>
+                                            <label for="Prenom" class="col-sm-2 col-form-label">Prénom Gérant</label>
                                             <div class="col-sm-10">
-                                                <textarea name="description" id="Descriptionplan" class="form-control" placeholder="Description de plan">${requestScope.plan['desc_type']}</textarea>
+                                                <label for="PrenomG" class=" col-form-label">${requestScope.gerant['prenom']}</label>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <label for="EmailG" class=" col-form-label">${requestScope.gerant['email']}</label>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <label for="Plan" class="col-sm-2 col-form-label">Plan</label>
+                                            <div class="col-sm-10">
+                                                <label for="PlanG" class=" col-form-label">${requestScope.abonnement['nom_type']}</label>
                                             </div>
                                         </div>
 
                                         <div class="position-relative row form-group">
                                             <label for="check" class="col-sm-2 col-form-label">Status</label>
                                             <div class="col-sm-10">
-                                                <div class="position-relative form-check">
-                                                    <label class="form-check-label">
-                                                        <input id="check" name="statut" ${requestScope.plan['statut'] == 1 ? 'checked' : ''} type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
-                                                    </label>
-                                                </div>
+                                                <label for="check" class=" col-form-label">${requestScope.gerant['statut'] == 1 ? 'Activer' : 'Desactiver'}</label>
+
                                             </div>
                                         <div>
                                         </div>
                                       </div>
 
-                                        <div class="position-relative row form-check">
-                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">                                             
-                                                <input class="btn btn-secondary" type="submit" value="Modifier"/>
-                                            </div>
-                                        </div>
+
 
                                     </form>
 
@@ -1795,6 +1795,4 @@
     <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="assets/scripts/main.js"></script></body>
 
 
-
 </html>
-    
