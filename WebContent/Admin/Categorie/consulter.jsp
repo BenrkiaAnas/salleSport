@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
 
@@ -1333,7 +1334,7 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
 
-                                    <form class="" >
+                                    <form class="">
                                         <div class="position-relative row form-group">
                                             <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
                                             <div class="col-sm-10">

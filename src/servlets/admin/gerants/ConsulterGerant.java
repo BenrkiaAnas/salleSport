@@ -1,4 +1,4 @@
-package servlets.admin.plans;
+package servlets.admin.gerants;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,20 +7,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.Type_abonnementRepository;
+import dao.AbonnementRepository;
+import entities.Abonnement;
+import entities.Personne;
 import entities.Type_abonnement;
 
 /**
- * Servlet implementation class CreatePlan
+ * Servlet implementation class ConsulterGerant
  */
-@WebServlet("/createPlan")
-public class CreatePlan extends HttpServlet {
+@WebServlet("/consulterGerant")
+public class ConsulterGerant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreatePlan() {
+    public ConsulterGerant() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,8 +32,14 @@ public class CreatePlan extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("Admin/Plan/create.jsp").forward(request, response);
-
+		Long id = Long.parseLong(request.getParameter("consulter"));
+		AbonnementRepository abonnementRepository = new AbonnementRepository();
+		Abonnement abonnement = abonnementRepository.findByGerant(id); 
+		Personne gerant = abonnement.getPersonne();
+		Type_abonnement plan = abonnement.getType();
+		request.setAttribute("gerant", gerant);
+		request.setAttribute("abonnement", plan);
+		request.getRequestDispatcher("Admin/Gerant/consulter.jsp").forward(request, response);
 	}
 
 	/**
@@ -39,14 +47,7 @@ public class CreatePlan extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	    Type_abonnementRepository abonnementRepository = new Type_abonnementRepository();
-	    String nom = request.getParameter("nom");
-	    Double prix = Double.parseDouble(request.getParameter("prix"));
-		String description = request.getParameter("description");
-	    Type_abonnement plan = new Type_abonnement(null,nom, prix, description, null,1l);
-	    abonnementRepository.create(plan);
-	    response.sendRedirect(request.getContextPath() + "/listPlan");
+		doGet(request, response);
 	}
-	
 
 }

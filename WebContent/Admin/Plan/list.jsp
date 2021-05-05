@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 
@@ -1339,14 +1340,28 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>450</td>
-                                        <td>plan spécial</td>
-                                        <td>on</td>
-                                        <td>61</td>
-
-                                    </tr>
+                                    <c:forEach var="item" items="${requestScope.plans}" >
+                                     <tr>
+                                    		<td>${item['nom_type']}</td>
+	                                        <td>${item['prix']}</td>
+	                                        <td>${item['desc_type']}</td>
+	                                        <td>
+	                                        <c:choose>
+											  <c:when test="${item['statut'] == 1}">
+											    Activer
+											  </c:when>
+											  <c:otherwise>
+											    Desactiver
+											  </c:otherwise>
+											</c:choose>
+	                                        
+	                                        </td>
+	                                        <td>
+	                                        	<a href="modifierPlan?update=${item['id_type_abon']}" class="btn btn-primary">Modifier</a>
+	                                        	<a href="consulterPlan?consulter=${item['id_type_abon']}" class="btn btn-info">Consulter</a>
+	                                        </td>
+	                                 </tr>
+									</c:forEach>
 
                                     </tfoot>
                                 </table>

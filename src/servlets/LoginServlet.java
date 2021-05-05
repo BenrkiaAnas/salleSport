@@ -30,9 +30,10 @@ public class LoginServlet extends HttpServlet{
 		{
 			if(personneLogged.getId_role() == 1)
 			{
+				System.out.println("3andi access role");
 				HttpSession session = request.getSession();
 				session.setAttribute("personne", personneLogged);
-				request.getRequestDispatcher("Admin/dashboard.jsp").forward(request, response);
+				response.sendRedirect(request.getContextPath() + "/dashboard");
 
 			}
 		}

@@ -1333,7 +1333,7 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
 
-                                    <form class="">
+                                    <form class="" method="POST" action="">
                                         <div class="position-relative row form-group">
                                             <label for="nomplan" class="col-sm-2 col-form-label">Nom plan</label>
                                             <div class="col-sm-10">
@@ -1355,8 +1355,9 @@
                                         </div>
 
                                         <div class="position-relative row form-check">
-                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">
-                                                <button class="btn btn-primary">Crée</button>
+                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">                                           
+                                                <input class="btn btn-primary" type="submit" value="Crée"/>
+                                                
                                             </div>
                                         </div>
                                     </form>

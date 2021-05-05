@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
@@ -7,6 +7,7 @@
 
 
 <head>
+    <title>Modification Gérant</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -1321,7 +1322,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Modifier Plan
+                                <div>Modifier Gérant
 
                                 </div>
                             </div>
@@ -1334,32 +1335,36 @@
                                 <div class="card-body">
 
                                     <form class="" method="POST" action="">
-                                      <div class="position-relative row form-group">
-                                          <label for="nomplan" class="col-sm-2 col-form-label">Nom plan</label>
-                                          <div class="col-sm-10">
-                                              <input name="nom" id="nomplan" value="${requestScope.plan['nom_type']}" placeholder="Nom de plan" type="text" class="form-control">
-                                          </div>
-                                      </div>
                                         <div class="position-relative row form-group">
-                                            <label for="prixplan" class="col-sm-2 col-form-label">prix plan</label>
+                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Nom Gérant</label>
                                             <div class="col-sm-10">
-                                                <input name="prix" id="prixplan" value="${requestScope.plan['prix']}" placeholder="Prix de plan" type="text" class="form-control">
+                                                <input name="nom" value="${requestScope.gerant['nom']}" id="Nomg" placeholder="Nom de Gérant" type="text" class="form-control">
                                             </div>
                                         </div>
-
                                         <div class="position-relative row form-group">
-                                            <label for="Description" class="col-sm-2 col-form-label">Description plan</label>
+                                            <label for="Prenomgerant" class="col-sm-2 col-form-label">Prénom Gérant</label>
                                             <div class="col-sm-10">
-                                                <textarea name="description" id="Descriptionplan" class="form-control" placeholder="Description de plan">${requestScope.plan['desc_type']}</textarea>
+                                                <input name="prenom" value="${requestScope.gerant['prenom']}" id="Prenomg" placeholder="Prénom de Gérant" type="text" class="form-control">
                                             </div>
                                         </div>
-
+                                        <div class="position-relative row form-group">
+                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input name="email" value="${requestScope.gerant['email']}" id="Emailg" placeholder="Email" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Mot de Passe</label>
+                                            <div class="col-sm-10">
+                                                <input name="mdp"  id="Emailg" placeholder="Mot de Passe" type="password" class="form-control">
+                                            </div>
+                                        </div>
                                         <div class="position-relative row form-group">
                                             <label for="check" class="col-sm-2 col-form-label">Status</label>
                                             <div class="col-sm-10">
                                                 <div class="position-relative form-check">
                                                     <label class="form-check-label">
-                                                        <input id="check" name="statut" ${requestScope.plan['statut'] == 1 ? 'checked' : ''} type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
+                                                        <input ${requestScope.gerant['statut'] == 1 ? 'checked' : ''} id="check" name="Status" type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
                                                     </label>
                                                 </div>
                                             </div>
@@ -1368,8 +1373,8 @@
                                       </div>
 
                                         <div class="position-relative row form-check">
-                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">                                             
-                                                <input class="btn btn-secondary" type="submit" value="Modifier"/>
+                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">                                              
+                                                <input class="btn btn-secondary" type="submit" value="Modifier">
                                             </div>
                                         </div>
 
@@ -1795,6 +1800,5 @@
     <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="assets/scripts/main.js"></script></body>
 
 
-
+<!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/forms-layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Apr 2021 12:46:49 GMT -->
 </html>
-    
