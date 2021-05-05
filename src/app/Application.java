@@ -3,9 +3,11 @@ package app;
 import java.util.List;
 
 import dao.AbonnementRepository;
+import dao.EspaceRepository;
 import dao.PersonneRepository;
 import dao.Type_abonnementRepository;
 import entities.Abonnement;
+import entities.Espace;
 import entities.Personne;
 import entities.Type_abonnement;
 
@@ -36,10 +38,12 @@ public class Application {
 		
 		/*Personne personneDelete = personneRepository.find(2l);
 		personneRepository.delete(personneDelete);*/
-		AbonnementRepository abonnementRepository = new AbonnementRepository();
-		Abonnement abonnement = abonnementRepository.findByGerant(3l); 
-		System.out.println(abonnement.getPersonne().getNom()+" "+abonnement.getPersonne().getPrenom());
-		System.out.println(abonnement.getType().getNom_type());
+		//AbonnementRepository abonnementRepository = new AbonnementRepository();
+		//Abonnement abonnement = abonnementRepository.findByGerant(3l); 
+		EspaceRepository espaceRepo = new EspaceRepository();
+		List<Espace> espace = espaceRepo.findEspaceByGerant(3l);
+		//System.out.println(abonnement.getPersonne().getNom()+" "+abonnement.getPersonne().getPrenom());
+		System.out.println(espace);
 		
 		
 		

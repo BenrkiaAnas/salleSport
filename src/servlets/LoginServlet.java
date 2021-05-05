@@ -26,6 +26,7 @@ public class LoginServlet extends HttpServlet{
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Personne personneLogged = personneRepository.findBy(email, password);
+		System.out.println(personneLogged);
 		if(personneLogged.getStatut() == 1)
 		{
 			if(personneLogged.getId_role() == 1)

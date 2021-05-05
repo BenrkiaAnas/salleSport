@@ -1,4 +1,4 @@
-package servlets.admin.categories;
+package servlets.gerants.tournoi;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,23 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import dao.CategorieRepository;
-import entities.Categorie;
-import entities.Personne;
+import dao.TournoiRepository;
+import entities.Tournoi;
 
 /**
- * Servlet implementation class ListeCategorie
+ * Servlet implementation class ListeTournoi
  */
-@WebServlet("/listeCategorie")
-public class ListeCategorie extends HttpServlet {
+@WebServlet("/listeTournoi")
+public class ListeTournoi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListeCategorie() {
+    public ListeTournoi() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,17 +32,10 @@ public class ListeCategorie extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
-		
-		CategorieRepository categorieRepository = new CategorieRepository();
-		List<Categorie> categories = categorieRepository.findAll();
-		request.setAttribute("categories", categories);
-		request.getRequestDispatcher("Admin/Categorie/list.jsp").forward(request, response);
-		
-		
-		
-
+		TournoiRepository repository = new TournoiRepository();
+		List<Tournoi> list = repository.findAll();
+		request.setAttribute("list", list);
+		request.getRequestDispatcher("Gerant/Tournoi/liste.jsp").forward(request, response);
 	}
 
 	/**
