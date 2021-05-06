@@ -36,6 +36,11 @@ public class LoginServlet extends HttpServlet{
 				session.setAttribute("personne", personneLogged);
 				response.sendRedirect(request.getContextPath() + "/dashboard");
 
+			}else {
+				System.out.println("3andi access role");
+				HttpSession session = request.getSession();
+				session.setAttribute("personne", personneLogged);
+				response.sendRedirect(request.getContextPath() + "/dashboardGerant");
 			}
 		}
 	}

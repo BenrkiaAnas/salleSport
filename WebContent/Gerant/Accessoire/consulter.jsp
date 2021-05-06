@@ -7,7 +7,6 @@
 
 
 <head>
-    <title>Profile</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -1322,7 +1321,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Profile
+                                <div>Consulter Accessoire
 
                                 </div>
                             </div>
@@ -1334,38 +1333,39 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
 
-                                    <form class="" method="POST" action="">
+                                    <form class="" >
                                         <div class="position-relative row form-group">
-                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Nom</label>
+                                            <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
                                             <div class="col-sm-10">
-                                                <input name="nom" value="${requestScope.currentUser['nom']}" id="Nomg" placeholder="Nom de Gérant" type="text" class="form-control">
+                                                <label for="Nom" class=" col-form-label">${requestScope.accessoire['nom_acc']}</label>
                                             </div>
                                         </div>
-                                        <div class="position-relative row form-group">
-                                            <label for="Prenomgerant" class="col-sm-2 col-form-label">Prénom</label>
-                                            <div class="col-sm-10">
-                                                <input name="prenom" value="${requestScope.currentUser['prenom']}" id="Prenomg" placeholder="Prénom de Gérant" type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="position-relative row form-group">
-                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Email</label>
-                                            <div class="col-sm-10">
-                                                <input name="email" value="${requestScope.currentUser['email']}" id="Emailg" placeholder="Email" type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="position-relative row form-group">
-                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Mot de Passe</label>
-                                            <div class="col-sm-10">
-                                                <input name="mdp"  id="Emailg" placeholder="Mot de Passe" type="password" class="form-control">
-                                            </div>
-                                        </div>
-                                     
 
-                                        <div class="position-relative row form-check">
-                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">                                              
-                                                <input class="btn btn-secondary" type="submit" value="Modifier">
+                                          <div class="position-relative row form-group">
+                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                                            <div class="col-sm-10" style="padding-top: 7px">
+                                                <p for="Description" class=" ">${requestScope.accessoire['description']}</p>
                                             </div>
                                         </div>
+                                        <div class="position-relative row form-group">
+                                            <label for="Image" class="col-sm-2 col-form-label">Image</label>
+                                            <div class="col-sm-10">
+                                             <div>
+                                             	<img alt="" src="./images/${requestScope.accessoire['image_acc']}" style="width: 150px;height: 90px"> 
+                                             </div>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <label for="check" class="col-sm-2 col-form-label">Status</label>
+                                            <div class="col-sm-10">
+                                                <label for="check" class=" col-form-label">${requestScope.accessoire['statut'] == 1 ? 'Activer' : 'Desactiver'}</label>
+                                                
+                                            </div>
+                                        <div>
+                                        </div>
+                                      </div>
+
+                                        
 
                                     </form>
 
@@ -1789,5 +1789,5 @@
     <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="assets/scripts/main.js"></script></body>
 
 
-<!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/forms-layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Apr 2021 12:46:49 GMT -->
 </html>
+    

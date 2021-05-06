@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+/entities/
+/metier/
+/servlets/
+=======
 /servlets/
 /dao/
 /app/
+>>>>>>> 234aa613e76ee4b8c7449a0ce463e8cce205841d

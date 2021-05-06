@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 
@@ -7,7 +8,6 @@
 
 
 <head>
-    <title>Profile</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -1322,7 +1322,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Profile
+                                <div>Modifier Accessoire
 
                                 </div>
                             </div>
@@ -1334,36 +1334,59 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
 
-                                    <form class="" method="POST" action="">
-                                        <div class="position-relative row form-group">
-                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Nom</label>
+                                    <form class="" enctype="multipart/form-data" method="POST" action="">
+                                    <div class="position-relative row form-group">
+                                            <label for="categorie" class="col-sm-2 col-form-label">Categorie</label>
                                             <div class="col-sm-10">
-                                                <input name="nom" value="${requestScope.currentUser['nom']}" id="Nomg" placeholder="Nom de Gérant" type="text" class="form-control">
+                                                 <select class="mb-2 form-control" name="categorie">
+                                                 <c:forEach var="item" items="${requestScope.categories}" >
+														   <option  value="${item['id_cate'] }">${item['nom_cate']}</option>
+													</c:forEach>
+                                            </select>
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
-                                            <label for="Prenomgerant" class="col-sm-2 col-form-label">Prénom</label>
+                                            <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
                                             <div class="col-sm-10">
-                                                <input name="prenom" value="${requestScope.currentUser['prenom']}" id="Prenomg" placeholder="Prénom de Gérant" type="text" class="form-control">
+                                                <input name="nom" id="Nom" placeholder="Nom de l'Accessoire" type="text" value="${requestScope.accessoire['nom_acc']}" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group">
+                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="description" id="Description" class="form-control" placeholder="Description de l'Accessoire">${requestScope.accessoire['description']}</textarea>
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
-                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Email</label>
+                                            <label for="prix" class="col-sm-2 col-form-label">Prix</label>
                                             <div class="col-sm-10">
-                                                <input name="email" value="${requestScope.currentUser['email']}" id="Emailg" placeholder="Email" type="text" class="form-control">
+                                                <input name="prix" id="prix" placeholder="Nom de l'Accessoire" type="text" value="${requestScope.accessoire['prix_acc']}" class="form-control">
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
-                                            <label for="Nomgerant" class="col-sm-2 col-form-label">Mot de Passe</label>
+                                            <label for="Image" class="col-sm-2 col-form-label">Image</label>
                                             <div class="col-sm-10">
-                                                <input name="mdp"  id="Emailg" placeholder="Mot de Passe" type="password" class="form-control">
+                                                <input name="file" id="Image" type="file" class="form-control-file">
+
                                             </div>
                                         </div>
-                                     
+                                        <div class="position-relative row form-group">
+                                            <label for="check" class="col-sm-2 col-form-label">Status</label>
+                                            <div class="col-sm-10">
+                                                <div class="position-relative form-check">
+                                                    <label class="form-check-label">
+                                                        <input ${requestScope.accessoire['statut'] == 1 ? 'checked' : ''} id="check" name="Status" type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        <div>
+                                        </div>
+                                      </div>
 
                                         <div class="position-relative row form-check">
-                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">                                              
-                                                <input class="btn btn-secondary" type="submit" value="Modifier">
+                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">
+                                                <button class="btn btn-secondary">Modifier</button>
                                             </div>
                                         </div>
 
@@ -1789,5 +1812,5 @@
     <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="assets/scripts/main.js"></script></body>
 
 
-<!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/forms-layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Apr 2021 12:46:49 GMT -->
 </html>
+    

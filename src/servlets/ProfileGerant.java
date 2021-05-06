@@ -12,16 +12,16 @@ import dao.PersonneRepository;
 import entities.Personne;
 
 /**
- * Servlet implementation class ProfileAdmin
+ * Servlet implementation class ProfileGerant
  */
-@WebServlet("/profile")
-public class ProfileAdmin extends HttpServlet {
+@WebServlet("/gerant")
+public class ProfileGerant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProfileAdmin() {
+    public ProfileGerant() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,8 +34,7 @@ public class ProfileAdmin extends HttpServlet {
 		HttpSession session = request.getSession();
 		Personne currentUser = (Personne) session.getAttribute("personne");
 		request.setAttribute("currentUser", currentUser);
-		request.getRequestDispatcher("Admin/profileAdmin.jsp").forward(request, response);
-
+		request.getRequestDispatcher("Admin/profileGerant.jsp").forward(request, response);
 	}
 
 	/**
@@ -63,8 +62,7 @@ public class ProfileAdmin extends HttpServlet {
 		
 		
 		personneRepository.edit(personne);
-		response.sendRedirect(request.getContextPath() + "/dashboard");
-		
+		response.sendRedirect(request.getContextPath() + "/dashboardGerant");
 	}
 
 }
