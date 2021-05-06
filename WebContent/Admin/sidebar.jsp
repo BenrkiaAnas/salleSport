@@ -49,12 +49,12 @@
                                       
                                     >
                                     <li>
-                                        <a href="pages-login.html" >
+                                        <a href="/listPlan" >
                                             <i class="metismenu-icon"></i> Liste Plans
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="pages-login-boxed.html" >
+                                        <a href="/createPlan" >
                                             <i class="metismenu-icon"></i>Crée Plan
                                         </a>
                                     </li>
@@ -71,7 +71,7 @@
                                       
                                     >
                                     <li>
-                                        <a href="/listeCategories" >
+                                        <a href="/listeCategorie" >
                                             <i class="metismenu-icon"></i> Liste Catégories
                                         </a>
                                     </li>
@@ -85,7 +85,7 @@
                             </li>
                             
                             <li>
-                                <a href="#">
+                                <a href="/listeGerant">
                                     <i class="metismenu-icon pe-7s-browser"></i>Gérants
                                 </a>
                                 

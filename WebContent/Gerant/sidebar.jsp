@@ -94,12 +94,12 @@
                                       
                                     >
                                     <li>
-                                        <a href="pages-login.html" >
+                                        <a href="/listAccessoire" >
                                             <i class="metismenu-icon"></i> Liste Accessoires
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="pages-login-boxed.html" >
+                                        <a href="/createAccessoire" >
                                             <i class="metismenu-icon"></i>Crée Accessoire
                                         </a>
                                     </li>

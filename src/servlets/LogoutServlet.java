@@ -28,7 +28,13 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession session = request.getSession(false);
+		if(session != null)
+		{
+			session.invalidate();
+		}
+		
+		response.sendRedirect(request.getContextPath() + "/login");
 	}
 
 	/**
@@ -36,9 +42,7 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		//session.invalidate();
-		response.sendRedirect(request.getContextPath() + "/login");
+		
 	}
 
 }
