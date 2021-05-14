@@ -42,6 +42,7 @@ public class Application {
 		Abonnement abonnement = abonnementRepository.findByGerant(3l); 
 		System.out.println(abonnement.getPersonne().getNom()+" "+abonnement.getPersonne().getPrenom());
 		System.out.println(abonnement.getType().getNom_type());*/
+		
 		TournoiRepository tournoiRepository = new TournoiRepository();
 		Tournoi tournoi = tournoiRepository.findEspaceByTournoi(1l);
 		
