@@ -15,6 +15,11 @@ public class EspaceRepository extends Repository<Espace>{
 	{
 		return (Espace) em.createQuery("from "+entityClass.getSimpleName()+ " where nom_esp='"+nom+"' AND id_gerer='"+ gerant.getId_personne() +"'").getSingleResult();
 	}
+	
+	public Espace findEspaceByCurrentUser(Long id)
+	{
+		return (Espace) em.createQuery("from "+entityClass.getSimpleName()+ " where id_gerer='"+id+"'").getSingleResult();
+	}
 
 
 }

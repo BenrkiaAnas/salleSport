@@ -4,17 +4,19 @@ import java.util.List;
 
 import dao.AbonnementRepository;
 import dao.PersonneRepository;
+import dao.TournoiRepository;
 import dao.Type_abonnementRepository;
 import entities.Abonnement;
 import entities.Personne;
+import entities.Tournoi;
 import entities.Type_abonnement;
 
 public class Application {
 	public static void main(String[] args) {
 		PersonneRepository personneRepository = new PersonneRepository();
 		
-		Type_abonnementRepository abonnementRepo = new Type_abonnementRepository();
-		List<Type_abonnement> plan = abonnementRepo.getAllPlans();
+		//Type_abonnementRepository abonnementRepo = new Type_abonnementRepository();
+		//List<Type_abonnement> plan = abonnementRepo.getAllPlans();
 		
 	
 		
@@ -36,11 +38,14 @@ public class Application {
 		
 		/*Personne personneDelete = personneRepository.find(2l);
 		personneRepository.delete(personneDelete);*/
-		AbonnementRepository abonnementRepository = new AbonnementRepository();
+		/*AbonnementRepository abonnementRepository = new AbonnementRepository();
 		Abonnement abonnement = abonnementRepository.findByGerant(3l); 
 		System.out.println(abonnement.getPersonne().getNom()+" "+abonnement.getPersonne().getPrenom());
-		System.out.println(abonnement.getType().getNom_type());
+		System.out.println(abonnement.getType().getNom_type());*/
+		TournoiRepository tournoiRepository = new TournoiRepository();
+		Tournoi tournoi = tournoiRepository.findEspaceByTournoi(1l);
 		
+		System.out.println(tournoi);
 		
 		
 		
