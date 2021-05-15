@@ -22,7 +22,7 @@ import entities.Tournoi;
 /**
  * Servlet implementation class ModifierTournoi
  */
-@WebServlet("/ModifierTournoi")
+@WebServlet("/modifierTournoi")
 public class ModifierTournoi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -48,6 +48,7 @@ public class ModifierTournoi extends HttpServlet {
         List<Espace> espaces = espaceRepository.findEspaceByGerant(currentUser.getId_personne());
 		request.setAttribute("tournoi", tournoi);
 		request.setAttribute("espaces", espaces);
+		System.out.println(tournoi);
 		request.getRequestDispatcher("Gerant/Tournoi/modifier.jsp").forward(request, response);
 	}
 
@@ -88,7 +89,8 @@ public class ModifierTournoi extends HttpServlet {
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}	
+		sdf.applyPattern("yyyy-MM-dd");
 		Long nbr_team = Long.parseLong(request.getParameter("nbr_team"));
 		EspaceRepository espacerepo = new EspaceRepository();
 	    Espace espace = espacerepo.find(id_espace);
@@ -99,7 +101,7 @@ public class ModifierTournoi extends HttpServlet {
 	    tournoi.setDate_fin_ins(date_fin_insc);
 	    tournoi.setPrix(prix);
 	    tournoi.setEspace(espace);
-	    tournoi.setStatut(nbr_team);
+	    tournoi.setNbr_team(nbr_team);
 	    if(statut == null)
 		{
 			tournoi.setStatut(0l);
@@ -108,7 +110,7 @@ public class ModifierTournoi extends HttpServlet {
 		}
 	    
 	    repository.edit(tournoi);
-		response.sendRedirect(request.getContextPath() + "/listTournoi");
+		response.sendRedirect(request.getContextPath() + "/listeTournoi");
 		
 	}
 

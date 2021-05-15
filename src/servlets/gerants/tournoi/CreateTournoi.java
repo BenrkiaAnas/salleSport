@@ -44,7 +44,7 @@ public class CreateTournoi extends HttpServlet {
         Personne currentUser = (Personne) session.getAttribute("personne");	
         EspaceRepository espaceRepository = new EspaceRepository();
         System.out.println(currentUser);
-        List<Espace> espaces = espaceRepository.findEspaceByGerant(currentUser.getId_personne());
+        List<Espace> espaces = (List<Espace>) espaceRepository.findEspaceByGerant(currentUser.getId_personne());
         System.out.println(espaces);
         request.setAttribute("espaces", espaces);
 		request.getRequestDispatcher("Gerant/Tournoi/create.jsp").forward(request, response);

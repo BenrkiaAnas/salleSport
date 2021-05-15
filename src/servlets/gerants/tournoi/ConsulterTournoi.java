@@ -10,21 +10,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.EspaceRepository;
 import dao.TournoiRepository;
+import entities.Espace;
 import entities.Personne;
 import entities.Tournoi;
 
 /**
- * Servlet implementation class ListeTournoi
+ * Servlet implementation class ConsulterTournoi
  */
-@WebServlet("/listeTournoi")
-public class ListeTournoi extends HttpServlet {
+@WebServlet("/consulterTournoi")
+public class ConsulterTournoi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListeTournoi() {
+    public ConsulterTournoi() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,10 +39,14 @@ public class ListeTournoi extends HttpServlet {
 		HttpSession session = request.getSession();
         Personne currentUser = (Personne) session.getAttribute("personne");	
 		TournoiRepository repository = new TournoiRepository();
-		List<Tournoi> list = repository.findEspaceByTournoi(currentUser.getId_personne());
-		request.setAttribute("list", list);
-		System.out.println(list);
-		request.getRequestDispatcher("Gerant/Tournoi/liste.jsp").forward(request, response);
+		Long id = Long.parseLong(request.getParameter("consulter"));
+		Tournoi tournoi = repository.find(id);
+		EspaceRepository espaceRepository = new EspaceRepository();
+        List<Espace> espaces = espaceRepository.findEspaceByGerant(currentUser.getId_personne());
+		request.setAttribute("tournoi", tournoi);
+		request.setAttribute("espaces", espaces);
+		System.out.println(tournoi);
+		request.getRequestDispatcher("Gerant/Tournoi/consulter.jsp").forward(request, response);
 	}
 
 	/**

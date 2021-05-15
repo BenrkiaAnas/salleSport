@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
 
 
 <head>
-    <title>Modification Turnoi</title>
+    <title>Modification Tournoi</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -1349,43 +1350,43 @@
                                       <div class="position-relative row form-group">
                                           <label for="NomT" class="col-sm-2 col-form-label">Nom Tournoi</label>
                                           <div class="col-sm-10">
-                                              <input name="nomt" id="Nomt" value="${requestScope.tournoi['nom_trn']} placeholder="Nom du Turnoi" type="text" class="form-control">
+                                              <input name="nom" id="Nomt" value="${requestScope.tournoi['nom_trn']}" placeholder="Nom du Turnoi" type="text" class="form-control">
                                           </div>
                                       </div>
                                       <div class="position-relative row form-group">
                                           <label for="DescriptionT" class="col-sm-2 col-form-label">Description</label>
                                           <div class="col-sm-10">
-                                              <input name="desc" id="Desct" value="${requestScope.tournoi['discription_trn']} type="textarea" class="form-control">
+                                              <input name="description" id="Desct" value="${requestScope.tournoi['description_trn']}" type="textarea" class="form-control">
                                           </div>
                                       </div>
                                       <div class="position-relative row form-group">
-                                          <label for="PrixT" class="col-sm-2 col-form-label">Prix</label>
+                                          <label for="Prix" class="col-sm-2 col-form-label">Prix</label>
                                           <div class="col-sm-10">
-                                              <input name="prixt" id="PrixT" value="${requestScope.tournoi['prix']} type="text" class="form-control">
+                                              <input name="prix" id="Prixt" value="${requestScope.tournoi['prix']}" type="text" class="form-control">
                                           </div>
                                       </div>
                                       <div class="position-relative row form-group">
                                           <label for="DateD" class="col-sm-2 col-form-label">Date debut</label>
                                           <div class="col-sm-10">
-                                              <input name="date_deb" id="Dated" value="${requestScope.tournoi['date_debut']} type="date" class="form-control">
+                                              <input name="date_deb" id="Dated" value="${requestScope.tournoi['date_debut']}" pattern="yyyy-MM-dd" type="date" class="form-control">
                                           </div>
                                       </div>
                                       <div class="position-relative row form-group">
                                           <label for="DateF" class="col-sm-2 col-form-label">Date Fin</label>
                                           <div class="col-sm-10">
-                                              <input name="date_fin" id="DateF"  value="${requestScope.tournoi['date_fin']} type="date" class="form-control">
+                                              <input name="date_fin" id="DateF"  value="${requestScope.tournoi['date_fin']}" pattern="yyyy-MM-dd" type="date" class="form-control">
                                           </div>
                                       </div>
                                        <div class="position-relative row form-group">
                                           <label for="Datei" class="col-sm-2 col-form-label">Date Fin Inscription</label>
                                           <div class="col-sm-10">
-                                              <input name="date_fin_ins" id="Datei" value="${requestScope.tournoi['date_fin_ins']} type="date" class="form-control">
+                                              <input name="date_fin_inc" id="Datei" value="${requestScope.tournoi['date_fin_ins']}" pattern="yyyy-MM-dd" type="date" class="form-control">
                                           </div>
                                       </div>
                                       <div class="position-relative row form-group">
                                           <label for="NombreT" class="col-sm-2 col-form-label">Nombre d'équipe</label>
                                           <div class="col-sm-10">
-                                              <input name="nbr_team" id="Nomberet" value="${requestScope.tournoi['nbr_team']} type="number" class="form-control";>
+                                              <input name="nbr_team" id="Nomberet" value="${requestScope.tournoi['nbr_team']}" type="number" class="form-control";>
                                           </div>
                                       </div>
                                       <div class="position-relative row form-group">
@@ -1393,7 +1394,7 @@
                                           <div class="col-sm-10">
                                               <div class="position-relative form-check">
                                                   <label class="form-check-label">
-                                                      <input id="check" name="Status" type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
+                                                      <input id="check" name="Status" ${requestScope.tournoi['statut'] == 1 ? 'checked' : ''} type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
                                                   </label>
                                               </div>
                                           </div>

@@ -8,7 +8,7 @@
 <!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/tables-data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Apr 2021 12:46:46 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <title>Liste Gérant</title>
+    <title>Liste Tournoi</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -1333,12 +1333,13 @@
                                 <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                     <thead>
                                     <tr>
-                                        <th>Nom Turnoi</th>
-                                        <th>Nom Turnoi</th>
+                                        <th>Nom Tournoi</th>
+                                        <th>Nom Espace</th>
                                         <th>Description</th>
                                         <th>Prix</th>
                                         <th>Date Debut</th>
                                         <th>Date Fin</th>
+                                        <th>Date Fin Inscription</th>
                                         <th>Nombre d'équipe</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -1346,9 +1347,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="item" items="${requestScope.tournois}" >
+                                    <c:forEach var="item" items="${requestScope.list}" >
                                      <tr>
                                     		<td>${item['nom_trn']}</td>
+                                    		<td>${item['espace']['nom_esp']}</td>
 	                                        <td>${item['description_trn']}</td>
 	                                        <td>${item['prix']}</td>
 	                                        <td>${item['date_debut']}</td>
@@ -1367,8 +1369,8 @@
 	                                        
 	                                        </td>
 	                                        <td>
-	                                        	<a href="modifierCategorie?update=${item['id_gerer']}" class="btn btn-primary">Modifier</a>
-	                                        	<a href="consulterCategorie?consulter=${item['id_gerer']}" class="btn btn-info">Consulter</a>
+	                                        	<a href="modifierTournoi?update=${item['id_trn']}" class="btn btn-primary">Modifier</a>
+	                                        	<a href="consulterTournoi?consulter=${item['id_trn']}" class="btn btn-info">Consulter</a>
 	                                        </td>
 	                                 </tr>
 									</c:forEach>

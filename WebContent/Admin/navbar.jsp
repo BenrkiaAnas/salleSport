@@ -52,7 +52,7 @@
                                                     <ul class="nav flex-column">
                                                         
                                                         <li class="nav-item">
-                                                            <a href="#" class="nav-link">Profil</a>
+                                                            <a href="/profile" class="nav-link">Profil</a>
                                                             <a href="/logout" class="nav-link">Se Déconnecter</a>
                                                         </li>
                                                     </ul>
@@ -65,8 +65,8 @@
                                     </div>
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
-                                    <div class="widget-heading"> Alina Mclourd </div>
-                                    <div class="widget-subheading"> VP People Manager </div>
+                                    <div class="widget-heading">  </div>
+                                    <div class="widget-subheading"> Administrateur </div>
                                 </div>
                              
                             </div>
