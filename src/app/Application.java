@@ -42,10 +42,9 @@ public class Application {
 		personneRepository.delete(personneDelete);*/
 
 		
-		TournoiRepository tournoiRepository = new TournoiRepository();
-		Tournoi tournoi = tournoiRepository.findEspaceByTournoi(1l);
 		
-		System.out.println(tournoi);
+		
+		
 		
 		
 		

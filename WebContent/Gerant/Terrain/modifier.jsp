@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 
@@ -23,15 +24,13 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
-        
-        
-        <jsp:include page="../navbar.jsp"></jsp:include>
-        
+      
+       <jsp:include page="../navbar.jsp"></jsp:include>
+      
               <div class="app-main">
             
              <jsp:include page="../sidebar.jsp"></jsp:include>
-             
-             
+            
             <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="app-page-title">
@@ -40,7 +39,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Consulter Accessoire
+                                <div>Modifier Terrain
 
                                 </div>
                             </div>
@@ -52,45 +51,47 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
 
-                                    <form class="" >
+                                    <form class="" enctype="multipart/form-data" method="POST" action="">
+                                    
                                         <div class="position-relative row form-group">
                                             <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
                                             <div class="col-sm-10">
-                                                <label for="Nom" class=" col-form-label">${requestScope.accessoire['nom_acc']}</label>
+                                                <input name="nom" id="Nom" placeholder="Nom de l'Accessoire" type="text" value="${requestScope.terrain['nom_ter']}" class="form-control">
                                             </div>
                                         </div>
 
-                                          <div class="position-relative row form-group">
-                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
-                                            <div class="col-sm-10" style="padding-top: 7px">
-                                                <p for="Description" class=" ">${requestScope.accessoire['description']}</p>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="position-relative row form-group">
-                                            <label for="Description" class="col-sm-2 col-form-label">Prix</label>
-                                            <div class="col-sm-10" style="padding-top: 7px">
-                                                <p for="prix_acc" class=" ">${requestScope.accessoire['prix_acc']}</p>
+                                            <label for="Prix" class="col-sm-2 col-form-label">Prix</label>
+                                            <div class="col-sm-10">
+                                                <input name="prix" id="prix" placeholder="Nom de l'Accessoire" type="text" value="${requestScope.terrain['prix']}" class="form-control">
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="Image" class="col-sm-2 col-form-label">Image</label>
                                             <div class="col-sm-10">
-                                             <div>
-                                             	<img alt="" src="./images/${requestScope.accessoire['image_acc']}" style="width: 150px;height: 90px"> 
-                                             </div>
+                                                <input name="file" id="Image" type="file" class="form-control-file">
+
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="check" class="col-sm-2 col-form-label">Status</label>
                                             <div class="col-sm-10">
-                                                <label for="check" class=" col-form-label">${requestScope.accessoire['statut'] == 1 ? 'Activer' : 'Desactiver'}</label>
-                                                
+                                                <div class="position-relative form-check">
+                                                    <label class="form-check-label">
+                                                        <input ${requestScope.terrain['statut'] == 1 ? 'checked' : ''} id="check" name="Status" type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
+                                                    </label>
+                                                </div>
                                             </div>
                                         <div>
                                         </div>
                                       </div>
 
-                                        
+                                        <div class="position-relative row form-check">
+                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">
+                                                <input  class="btn btn-secondary" type="submit"  value="Modifier" >
+                                            </div>
+                                        </div>
 
                                     </form>
 

@@ -107,13 +107,9 @@
                                             <label for="check" class="col-sm-2 col-form-label">Status</label>
                                             <div class="col-sm-10">
                                                 <label for="check" class=" col-form-label">
-                                                ${requestScope.tounoi['statut'] == 1 ? 'Activer' : 'Desactiver'}
-                                                
-                                                </label>
-                                                
-                                            </div>
-                                        <div>
-                                        </div>
+                                                ${requestScope.tounoi['statut'] == 1 ? 'Activer' : 'Desactiver'}                                             
+                                                </label>                                             
+                                            </div>                                      
                                       </div>
 
                                         

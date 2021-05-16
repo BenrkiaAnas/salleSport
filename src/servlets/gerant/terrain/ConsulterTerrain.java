@@ -1,32 +1,25 @@
-package servlets.gerants.tournoi;
+package servlets.gerant.terrain;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import dao.EspaceRepository;
-import dao.TournoiRepository;
-import entities.Espace;
-import entities.Personne;
-import entities.Tournoi;
+import dao.TerrainRepository;
+import entities.Terrain;
 
 /**
- * Servlet implementation class ConsulterTournoi
+ * Servlet implementation class ConsulterTerrain
  */
-@WebServlet("/consulterTournoi")
-public class ConsulterTournoi extends HttpServlet {
+@WebServlet("/consulterTerrain")
+public class ConsulterTerrain extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConsulterTournoi() {
+    public ConsulterTerrain() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,12 +30,12 @@ public class ConsulterTournoi extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		TournoiRepository repository = new TournoiRepository();
+		TerrainRepository repository = new TerrainRepository();
 		Long id = Long.parseLong(request.getParameter("consulter"));
-		Tournoi tournoi = repository.find(id);		
-		request.setAttribute("tournoi", tournoi);
-		System.out.println(tournoi);
-		request.getRequestDispatcher("Gerant/Tournoi/consulter.jsp").forward(request, response);
+		Terrain terrain = repository.find(id);
+		request.setAttribute("terrain", terrain);
+		System.out.println(terrain);
+		request.getRequestDispatcher("Gerant/Terrain/consulter.jsp").forward(request, response);
 	}
 
 	/**
