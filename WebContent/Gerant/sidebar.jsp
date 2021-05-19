@@ -36,13 +36,13 @@
                         <ul class="vertical-nav-menu">
                             <li  class="mm-active"      >
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-rocket"></i>Acceuil
+                                    <i class="metismenu-icon pe-7s-home"></i>Acceuil
                                 </a>
                                 
                             </li>
                             <li>
                                 <a href="/salleSport/listeEspace">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Espace Sportif
+                                    <i class="metismenu-icon pe-7s-sun"></i>Espace Sportif
                                     
                                 </a>
                                
@@ -50,7 +50,7 @@
                             
                             <li>
                                 <a href="/salleSport/listeTerrain">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Terrain
+                                    <i class="metismenu-icon pe-7s-ball"></i>Terrain
                                    
                                 </a>
                                
@@ -59,7 +59,7 @@
                             
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Accessoire
+                                    <i class="metismenu-icon pe-7s-ticket"></i>Accessoire
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul  
@@ -81,7 +81,7 @@
                             
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Tournoi
+                                    <i class="metismenu-icon pe-7s-cup"></i>Tournoi
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul  
@@ -102,7 +102,7 @@
                             </li>
                              <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Promotion
+                                    <i class="metismenu-icon pe-7s-magic-wand"></i>Promotion
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul  
@@ -116,6 +116,27 @@
                                     <li>
                                         <a href="/salleSport/createPromotion" >
                                             <i class="metismenu-icon"></i>Crée Promotion
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-ribbon"></i>Abonnement
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul  
+                                      
+                                    >
+                                    <li>
+                                        <a href="/salleSport/listeAbonnement" >
+                                            <i class="metismenu-icon"></i> Liste Abonnement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/salleSport/createAbonnement" >
+                                            <i class="metismenu-icon"></i>Crée Abonnement
                                         </a>
                                     </li>
                                     

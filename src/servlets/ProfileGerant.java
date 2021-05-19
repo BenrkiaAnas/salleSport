@@ -34,7 +34,7 @@ public class ProfileGerant extends HttpServlet {
 		HttpSession session = request.getSession();
 		Personne currentUser = (Personne) session.getAttribute("personne");
 		request.setAttribute("currentUser", currentUser);
-		request.getRequestDispatcher("Admin/profileGerant.jsp").forward(request, response);
+		request.getRequestDispatcher("Gerant/profileGerant.jsp").forward(request, response);
 	}
 
 	/**

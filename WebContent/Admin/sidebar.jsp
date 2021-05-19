@@ -36,13 +36,13 @@
                         <ul class="vertical-nav-menu">
                             <li  class="mm-active"      >
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-rocket"></i>Acceuil
+                                    <i class="metismenu-icon pe-7s-home"></i>Acceuil
                                 </a>
                                 
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Plans
+                                    <i class="metismenu-icon pe-7s-pin"></i>Plans
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul  
@@ -64,7 +64,7 @@
                             
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Catégories
+                                    <i class="metismenu-icon pe-7s-more"></i>Catégories
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul  
@@ -86,13 +86,13 @@
                             
                             <li>
                                 <a href="/salleSport/listeGerant">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Gérants
+                                    <i class="metismenu-icon pe-7s-users"></i>Gérants
                                 </a>
                                 
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Espaces Sportif
+                                    <i class="metismenu-icon pe-7s-sun"></i>Espaces Sportif
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul  
@@ -113,14 +113,14 @@
                             </li>
                              <li>
                                 <a href="/salleSport/listeTerrainAdmin">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Terrain
+                                    <i class="metismenu-icon pe-7s-ball"></i>Terrain
                                   
                                 </a>
                                
                             </li>
                             <li>
                                 <a href="/salleSport/listeTournoiAdmin">
-                                    <i class="metismenu-icon pe-7s-browser"></i>Tournoi
+                                    <i class="metismenu-icon pe-7s-cup"></i>Tournoi
                                   
                                 </a>
                                
