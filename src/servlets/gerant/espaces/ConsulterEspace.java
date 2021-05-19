@@ -1,30 +1,26 @@
-package servlets.admin.espace;
+package servlets.gerant.espaces;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.EspaceRepository;
 import entities.Espace;
-import entities.Personne;
 
 /**
- * Servlet implementation class ListeEspace
+ * Servlet implementation class ConsulterEspace
  */
-@WebServlet("espaces")
-public class ListeEspace extends HttpServlet {
+@WebServlet("/consulterEspace")
+public class ConsulterEspace extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListeEspace() {
+    public ConsulterEspace() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,12 +30,11 @@ public class ListeEspace extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-        EspaceRepository espaceRepository = new EspaceRepository();
-        List<Espace> espaces = espaceRepository.findAll();
-        request.setAttribute("espaces", espaces);
-        System.out.print(espaces);
-        request.getRequestDispatcher("Admin/Espace/list.jsp").forward(request, response);
+		Long id = Long.parseLong(request.getParameter("consulter"));
+		EspaceRepository espaceRepository = new EspaceRepository();
+		Espace espace = espaceRepository.find(id);
+		request.setAttribute("espace", espace);
+		request.getRequestDispatcher("Gerant/Espace/consulter.jsp").forward(request, response);
 	}
 
 	/**

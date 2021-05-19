@@ -1,12 +1,10 @@
-package servlets.admin.espace;
+package servlets.gerant.espaces;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.List;
-import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -14,28 +12,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.EspaceRepository;
-import dao.PersonneRepository;
 import entities.Espace;
-import entities.Personne;
+import java.util.logging.Logger;
 
 /**
- * Servlet implementation class CreateEspace
+ * Servlet implementation class ModifierEspace
  */
-@WebServlet("/createEspace")
+@WebServlet("/modifierEspace")
 @MultipartConfig
-public class CreateEspace extends HttpServlet {
+public class ModifierEspace extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final static Logger LOGGER =
-            Logger.getLogger(CreateEspace.class.getCanonicalName());
+            Logger.getLogger(ModifierEspace.class.getCanonicalName());
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreateEspace() {
+    public ModifierEspace() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,10 +41,12 @@ public class CreateEspace extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PersonneRepository personneRepository = new PersonneRepository();
-		List<Personne> gerants = personneRepository.getAllGerant();
-		request.setAttribute("gerants", gerants);
-		request.getRequestDispatcher("Admin/Espace/create.jsp").forward(request, response);
+		EspaceRepository espaceRepository = new EspaceRepository();
+		Long id = Long.parseLong(request.getParameter("update"));
+		Espace espace = espaceRepository.find(id);
+		request.setAttribute("espace", espace);
+		request.getRequestDispatcher("Gerant/Espace/modifier.jsp").forward(request, response);
+		
 	}
 
 	/**
@@ -56,19 +54,14 @@ public class CreateEspace extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Long id = Long.parseLong(request.getParameter("update"));
+		EspaceRepository espaceRepository = new EspaceRepository();
+		Espace espace = espaceRepository.find(id);
+		
 		String nom = request.getParameter("nom");
 		String description = request.getParameter("description");
-		Long id_personne = Long.parseLong(request.getParameter("gerant"));
-		PersonneRepository personneRepository = new PersonneRepository();
-		Personne gerant = personneRepository.find(id_personne);
 		
 		response.setContentType("text/html;charset=UTF-8");
-		EspaceRepository espaceRepository = new EspaceRepository();
-		
-		HttpSession session = request.getSession();
-        Personne currentUser = (Personne) session.getAttribute("personne");	
-        
-		Personne creator = personneRepository.find(currentUser.getId_personne());
 		
 		try (PrintWriter out = response.getWriter()) {
 			
@@ -81,11 +74,21 @@ public class CreateEspace extends HttpServlet {
 			System.out.println();
 			if(success)
 			{
-				Espace espace = new Espace(null, nom, null, description, filename, creator, gerant, 0l, 0l);
-		
+				espace.setNom_esp(nom);
+				espace.setDesc_esp(description);
+				espace.setImg_esp(filename);
+				if(espace.getLiked() == null)
+				{
+					espace.setLiked(0l);
+				}
+				if(espace.getDeslike() == null)
+				{
+					espace.setDeslike(0l);
+				}
+				espaceRepository.edit(espace);
 				
 				//request.getRequestDispatcher("Admin/Categorie/list.jsp").forward(request, response);
-				response.sendRedirect(request.getContextPath() + "/espaces");
+				response.sendRedirect(request.getContextPath() + "/listeEspace");
 			}else {
 				System.out.println("Error Upload");
 			}

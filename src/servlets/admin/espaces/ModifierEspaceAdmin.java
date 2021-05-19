@@ -1,11 +1,10 @@
-package servlets.admin.espace;
+package servlets.admin.espaces;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -17,6 +16,9 @@ import javax.servlet.http.Part;
 
 import dao.EspaceRepository;
 import entities.Espace;
+
+import java.util.logging.Logger;
+
 
 /**
  * Servlet implementation class ModifierEspaceAdmin
@@ -87,7 +89,7 @@ public class ModifierEspaceAdmin extends HttpServlet {
 				espaceRepository.edit(espace);
 				
 				//request.getRequestDispatcher("Admin/Categorie/list.jsp").forward(request, response);
-				response.sendRedirect(request.getContextPath() + "/listeEspace");
+				response.sendRedirect(request.getContextPath() + "/listeEspaceAdmin");
 			}else {
 				System.out.println("Error Upload");
 			}

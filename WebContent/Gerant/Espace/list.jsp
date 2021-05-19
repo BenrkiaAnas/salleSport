@@ -5,14 +5,13 @@
 <html lang="en">
 
 
-<!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/tables-data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Apr 2021 12:46:46 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+    <title>Liste Espaces</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Liste Terrains</title>
+ 
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="Choose between regular React Bootstrap tables or advanced dynamic ones.">
@@ -20,18 +19,20 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
-<link href="main.css" rel="stylesheet"></head>
+<link href="main.css" rel="stylesheet">
+</head>
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
     
-     <jsp:include page="../navbar.jsp"></jsp:include>
-   
-                <div class="app-main">
-               
-                <jsp:include page="../sidebar.jsp"></jsp:include>
-               
-                   <div class="app-main__outer">
+    <jsp:include page="../navbar.jsp"></jsp:include>
+    
+                      <div class="app-main">
+                      
+         <jsp:include page="../sidebar.jsp"></jsp:include>      
+         
+                
+                    <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="app-page-title">
                             <div class="page-title-wrapper">
@@ -39,7 +40,7 @@
                                     <div class="page-title-icon">
                                         <i class="pe-7s-medal icon-gradient bg-tempting-azure"></i>
                                     </div>
-                                    <div>Liste Terrain
+                                    <div>Liste Espaces
 
                                     </div>
                                 </div>
@@ -49,34 +50,28 @@
                                 <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                                     <thead>
                                     <tr>
-                                        <th>Nom Terrain</th>
-                                        <th>Prix</th>
-                                        <th>Status</th>
+                                        <th>Nom Espace</th>
+                                        <th>Description</th>
+                                        <th>Aimer</th>
+                                        <th>Non Aimer</th>
                                         <th>Action</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="item" items="${requestScope.list}" >
-                                    <tr>
-                                    		<td>${item['nom_ter']}</td>                                   	
-	                                        <td>${item['prix']}</td>
-	                                        
+                                    <c:forEach var="item" items="${requestScope.espaces}" >
+                                     <tr>
+                                    		<td>${item['nom_esp'] }</td>
+	                                        <td>${item['desc_esp']}</td>
+	                                        <td>${item['liked']}</td>
+	                                        <td>${item['deslike']}</td>
+	                                     
 	                                        <td>
-	                                        <c:choose>
-											  <c:when test="${item['statut'] == 1}">
-											    Activer
-											  </c:when>
-											  <c:otherwise>
-											    Desactiver
-											  </c:otherwise>
-											</c:choose>
-	                                        
-	                                        </td>
-	                                        <td>	                                        	
-	                                        	<a href="consulterTerrainAdmin?consulter=${item['id_ter']}" class="btn btn-info">Consulter</a>
+	                                        	<a href="modifierEspace?update=${item['id_esp']}" class="btn btn-primary">Modifier</a>
+	                                        	<a href="consulterEspace?consulter=${item['id_esp']}" class="btn btn-info">Consulter</a>
 	                                        </td>
 	                                 </tr>
-	                                 </c:forEach>
+									</c:forEach>
                                     </tfoot>
                                 </table>
                             </div>
@@ -498,7 +493,6 @@
         </div>
     </div>
     <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="assets/scripts/main.js"></script></body>
-
 
 
 </html>

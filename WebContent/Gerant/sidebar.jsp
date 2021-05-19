@@ -41,47 +41,19 @@
                                 
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="/salleSport/listeEspace">
                                     <i class="metismenu-icon pe-7s-browser"></i>Espace Sportif
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul  
-                                      
-                                    >
-                                    <li>
-                                        <a href="pages-login.html" >
-                                            <i class="metismenu-icon"></i> Liste Espaces
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-login-boxed.html" >
-                                            <i class="metismenu-icon"></i>Crée Espace
-                                        </a>
-                                    </li>
                                     
-                                </ul>
+                                </a>
+                               
                             </li>
                             
                             <li>
-                                <a href="#">
+                                <a href="/salleSport/listeTerrain">
                                     <i class="metismenu-icon pe-7s-browser"></i>Terrain
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                   
                                 </a>
-                                <ul  
-                                      
-                                    >
-                                    <li>
-                                        <a href="/listeCategories" >
-                                            <i class="metismenu-icon"></i> Liste Terrains
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/createCategorie" >
-                                            <i class="metismenu-icon"></i>Crée Terrain
-                                        </a>
-                                    </li>
-                                    
-                                </ul>
+                               
                             </li>
                             
                             
@@ -94,12 +66,12 @@
                                       
                                     >
                                     <li>
-                                        <a href="/listAccessoire" >
+                                        <a href="/salleSport/listAccessoire" >
                                             <i class="metismenu-icon"></i> Liste Accessoires
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/createAccessoire" >
+                                        <a href="/salleSport/createAccessoire" >
                                             <i class="metismenu-icon"></i>Crée Accessoire
                                         </a>
                                     </li>
@@ -116,13 +88,34 @@
                                       
                                     >
                                     <li>
-                                        <a href="pages-login.html" >
+                                        <a href="/salleSport/listeTournoi" >
                                             <i class="metismenu-icon"></i> Liste Tournois
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="pages-login-boxed.html" >
+                                        <a href="/salleSport/createTournoi" >
                                             <i class="metismenu-icon"></i>Crée Tournoi
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                             <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-browser"></i>Promotion
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul  
+                                      
+                                    >
+                                    <li>
+                                        <a href="/salleSport/listePromotion" >
+                                            <i class="metismenu-icon"></i> Liste Promotion
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/salleSport/createPromotion" >
+                                            <i class="metismenu-icon"></i>Crée Promotion
                                         </a>
                                     </li>
                                     

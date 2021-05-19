@@ -1,4 +1,6 @@
-/dao/
+/META-INF/
 /app/
-/servlets/
+/dao/
 /entities/
+/metier/
+/servlets/

@@ -99,17 +99,31 @@
                                       
                                     >
                                     <li>
-                                        <a href="/salleSport/espaces" >
+                                        <a href="/salleSport/listeEspaceAdmin" >
                                             <i class="metismenu-icon"></i> Liste Espaces
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/salleSport/createEspace" >
+                                        <a href="/salleSport/createEspaceAdmin" >
                                             <i class="metismenu-icon"></i>Crée Espace
                                         </a>
                                     </li>
                                     
                                 </ul>
+                            </li>
+                             <li>
+                                <a href="/salleSport/listeTerrainAdmin">
+                                    <i class="metismenu-icon pe-7s-browser"></i>Terrain
+                                  
+                                </a>
+                               
+                            </li>
+                            <li>
+                                <a href="/salleSport/listeTournoiAdmin">
+                                    <i class="metismenu-icon pe-7s-browser"></i>Tournoi
+                                  
+                                </a>
+                               
                             </li>
                             
                         </ul>

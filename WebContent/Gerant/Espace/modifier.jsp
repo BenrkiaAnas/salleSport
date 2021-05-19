@@ -1,21 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 
 
-<!-- Mirrored from demo.dashboardpack.com/architectui-html-pro/tables-data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 10 Apr 2021 12:46:46 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Liste Terrains</title>
+    <title>Espace Sportif</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <meta name="description" content="Choose between regular React Bootstrap tables or advanced dynamic ones.">
+    <meta name="description" content="Build whatever layout you need with our Architect framework.">
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
@@ -24,65 +22,73 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
-    
-     <jsp:include page="../navbar.jsp"></jsp:include>
-   
-                <div class="app-main">
-               
-                <jsp:include page="../sidebar.jsp"></jsp:include>
-               
-                   <div class="app-main__outer">
-                    <div class="app-main__inner">
-                        <div class="app-page-title">
-                            <div class="page-title-wrapper">
-                                <div class="page-title-heading">
-                                    <div class="page-title-icon">
-                                        <i class="pe-7s-medal icon-gradient bg-tempting-azure"></i>
-                                    </div>
-                                    <div>Liste Terrain
-
-                                    </div>
+             
+       <jsp:include page="../navbar.jsp"></jsp:include>
+             
+              <div class="app-main">
+              
+              <jsp:include page="../sidebar.jsp"></jsp:include>
+              
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading">
+                                <div class="page-title-icon">
+                                    <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                   </div>
-                        </div>            <div class="main-card mb-3 card">
-                            <div class="card-body">
-                                <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>Nom Terrain</th>
-                                        <th>Prix</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <c:forEach var="item" items="${requestScope.list}" >
-                                    <tr>
-                                    		<td>${item['nom_ter']}</td>                                   	
-	                                        <td>${item['prix']}</td>
-	                                        
-	                                        <td>
-	                                        <c:choose>
-											  <c:when test="${item['statut'] == 1}">
-											    Activer
-											  </c:when>
-											  <c:otherwise>
-											    Desactiver
-											  </c:otherwise>
-											</c:choose>
-	                                        
-	                                        </td>
-	                                        <td>	                                        	
-	                                        	<a href="consulterTerrainAdmin?consulter=${item['id_ter']}" class="btn btn-info">Consulter</a>
-	                                        </td>
-	                                 </tr>
-	                                 </c:forEach>
-                                    </tfoot>
-                                </table>
+                                <div>Modifier Espace Sportif
+
+                                </div>
                             </div>
-                        </div>
+                                </div>
                     </div>
-                      </div>
+                    <div class="tab-content">
+
+                        <div class="tab-pane tabs-animation " id="tab-content-1" role="tabpanel" style="display: block !important;">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+
+                                    <form class="" method="POST" enctype="multipart/form-data" action="">
+                                        <div class="position-relative row form-group">
+                                            <label for="NomE" class="col-sm-2 col-form-label">Nom Espace</label>
+                                            <div class="col-sm-10">
+                                                <input name="nom" value="${requestScope.espace['nom_esp']}" id="Nom" placeholder="Nom de l'espace Sportif" type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative row form-group">
+                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="description" id="Description" class="form-control" placeholder="Description de l'space sportif">${requestScope.espace['desc_esp']}</textarea>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="position-relative row form-group">
+                                            <label for="ImageE" class="col-sm-2 col-form-label">Image</label>
+                                            <div class="col-sm-10">
+                                                <input name="file" id="Imagee" type="file" class="form-control-file">
+
+                                            </div>
+                                        </div>
+                                        <!-- <div class="position-relative row form-group">
+                                            <label for="GallerieE" class="col-sm-2 col-form-label">Gallerie</label>
+                                            <div class="col-sm-10">
+                                                <input name="file" id="Gallerie" type="file" class="form-control-file">
+
+                                            </div>
+                                        </div>  -->
+                                    
+                                        <div class="position-relative row form-check">
+                                            <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">
+                                                <input value="Modifier" type="submit" class="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+
+                </div>
         </div>
     </div>
     <div class="app-drawer-wrapper">
@@ -497,8 +503,9 @@
             </div>
         </div>
     </div>
-    <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="assets/scripts/main.js"></script></body>
-
+    <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="main.js"></script></body>
 
 
 </html>
+
+    

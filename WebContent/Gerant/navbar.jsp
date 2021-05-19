@@ -52,8 +52,8 @@
                                                     <ul class="nav flex-column">
                                                         
                                                         <li class="nav-item">
-                                                            <a href="/gerant" class="nav-link">Profil</a>
-                                                            <a href="/logout" class="nav-link">Se Déconnecter</a>
+                                                            <a href="/salleSport/gerant" class="nav-link">Profil</a>
+                                                            <a href="/salleSport/logout" class="nav-link">Se Déconnecter</a>
                                                         </li>
                                                     </ul>
                                                 </div>
