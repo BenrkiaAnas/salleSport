@@ -76,7 +76,7 @@
                                             <label for="Image" class="col-sm-2 col-form-label">Image</label>
                                             <div class="col-sm-10">
                                              <div>
-                                             	<img alt="" src="./images/${requestScope.accessoire['image_acc']}" style="width: 150px;height: 90px"> 
+                                             	<img alt="" src="${requestScope.accessoire['image_acc']}" style="width: 150px;height: 90px"> 
                                              </div>
                                             </div>
                                         </div>

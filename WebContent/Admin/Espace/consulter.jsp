@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
 
@@ -12,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Consulter Catégorie</title>
+    <title>Consulter Espace</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="Build whatever layout you need with our Architect framework.">
@@ -24,16 +23,16 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
-       
-                                <jsp:include page="../navbar.jsp"></jsp:include>
-       
-       
+        
+        
+        <jsp:include page="../navbar.jsp"></jsp:include>
+        
               <div class="app-main">
-              
-                                        		      <jsp:include page="../sidebar.jsp"></jsp:include>
-              
-           
-           <div class="app-main__outer">
+            
+             <jsp:include page="../sidebar.jsp"></jsp:include>
+             
+             
+            <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="app-page-title">
                         <div class="page-title-wrapper">
@@ -41,7 +40,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Consulter Catégorie
+                                <div>Consulter Accessoire
 
                                 </div>
                             </div>
@@ -53,40 +52,29 @@
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
 
-                                    <form class="">
+                                    <form class="" >
                                         <div class="position-relative row form-group">
-                                            <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
+                                            <label for="Nom" class="col-sm-2 col-form-label">Nom Espace</label>
                                             <div class="col-sm-10">
-                                                <label for="Nom" class=" col-form-label">${requestScope.categorie['nom_cate']}</label>
+                                                <label for="Nom" class=" col-form-label">${requestScope.espace['nom_esp']}</label>
                                             </div>
                                         </div>
 
-                                        <div class="position-relative row form-group">
+                                          <div class="position-relative row form-group">
                                             <label for="Description" class="col-sm-2 col-form-label">Description</label>
                                             <div class="col-sm-10" style="padding-top: 7px">
-                                                <p for="Description" class=" ">${requestScope.categorie['desc_cate']}</p>
+                                                <p for="Description" class=" ">${requestScope.espace['desc_esp']}</p>
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="Image" class="col-sm-2 col-form-label">Image</label>
                                             <div class="col-sm-10">
                                              <div>
-                                             	<img alt="" src="./images/${requestScope.categorie['img_cate']}" style="width: 250px;height: 150px"> 
+                                             	<img alt="" src="./images/${requestScope.espace['img_esp']}" style="width: 150px;height: 90px"> 
                                              </div>
                                             </div>
                                         </div>
-                                        <div class="position-relative row form-group">
-                                            <label for="check" class="col-sm-2 col-form-label">Status</label>
-                                            <div class="col-sm-10">
-                                                <label for="check" class=" col-form-label">
-                                                ${requestScope.categorie['statut'] == 1 ? 'Activer' : 'Desactiver'}
-                                                
-                                                </label>
-                                                
-                                            </div>
-                                        <div>
-                                        </div>
-                                      </div>
+                                   
 
                                         
 

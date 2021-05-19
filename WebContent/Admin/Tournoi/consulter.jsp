@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Consulter Catégorie</title>
+    <title>Consulter Tournoi.</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="Build whatever layout you need with our Architect framework.">
@@ -41,7 +41,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Consulter Catégorie
+                                <div>Consulter Tournoi
 
                                 </div>
                             </div>
@@ -54,38 +54,62 @@
                                 <div class="card-body">
 
                                     <form class="">
-                                        <div class="position-relative row form-group">
-                                            <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
+                                     <div class="position-relative row form-group">
+                                            <label for="espace" class="col-sm-2 col-form-label">Espace Sportif</label>
                                             <div class="col-sm-10">
-                                                <label for="Nom" class=" col-form-label">${requestScope.categorie['nom_cate']}</label>
+                                               <label for="Nom" class=" col-form-label">${requestScope.tournoi['espace']['nom_esp']}</label>
+                                            </div>
+                                        </div>    
+                                        <div class="position-relative row form-group">
+                                            <label for="espace" class="col-sm-2 col-form-label">Nom Tournoi</label>
+                                            <div class="col-sm-10">
+                                               <label for="Nom" class=" col-form-label">${requestScope.tournoi['nom_trn']}</label>
+                                            </div>
+                                        </div>    
+                                        <div class="position-relative row form-group">
+                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
+                                            <div class="col-sm-10" style="padding-top: 7px">
+                                                <p for="Description" class=" ">${requestScope.tournoi['description_trn']}</p>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative row form-group">
+                                            <label for="Description" class="col-sm-2 col-form-label">Prix</label>
+                                            <div class="col-sm-10" style="padding-top: 7px">
+                                                <p for="Description" class=" ">${requestScope.tournoi['prix']}</p>
                                             </div>
                                         </div>
 
                                         <div class="position-relative row form-group">
-                                            <label for="Description" class="col-sm-2 col-form-label">Description</label>
-                                            <div class="col-sm-10" style="padding-top: 7px">
-                                                <p for="Description" class=" ">${requestScope.categorie['desc_cate']}</p>
-                                            </div>
-                                        </div>
-                                        <div class="position-relative row form-group">
-                                            <label for="Image" class="col-sm-2 col-form-label">Image</label>
+                                            <label for="espace" class="col-sm-2 col-form-label">Date Debut</label>
                                             <div class="col-sm-10">
-                                             <div>
-                                             	<img alt="" src="./images/${requestScope.categorie['img_cate']}" style="width: 250px;height: 150px"> 
-                                             </div>
+                                               <label for="Nom" class=" col-form-label">${requestScope.tournoi['date_debut']}</label>
+                                            </div>
+                                        </div>    
+                                        <div class="position-relative row form-group">
+                                            <label for="espace" class="col-sm-2 col-form-label">Date Fin</label>
+                                            <div class="col-sm-10">
+                                               <label for="Nom" class=" col-form-label">${requestScope.tournoi['date_fin']}</label>
+                                            </div>
+                                        </div>    
+                                        <div class="position-relative row form-group">
+                                            <label for="espace" class="col-sm-2 col-form-label">Date Fin Inscription</label>
+                                            <div class="col-sm-10">
+                                               <label for="Nom" class=" col-form-label">${requestScope.tournoi['date_fin_ins']}</label>
+                                            </div>
+                                        </div>    
+                                        <div class="position-relative row form-group">
+                                            <label for="espace" class="col-sm-2 col-form-label">Nombre d'équipe</label>
+                                            <div class="col-sm-10">
+                                               <label for="Nom" class=" col-form-label">${requestScope.tournoi['nbr_team']}</label>
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="check" class="col-sm-2 col-form-label">Status</label>
                                             <div class="col-sm-10">
                                                 <label for="check" class=" col-form-label">
-                                                ${requestScope.categorie['statut'] == 1 ? 'Activer' : 'Desactiver'}
-                                                
-                                                </label>
-                                                
-                                            </div>
-                                        <div>
-                                        </div>
+                                                ${requestScope.tounoi['statut'] == 1 ? 'Activer' : 'Desactiver'}                                             
+                                                </label>                                             
+                                            </div>                                      
                                       </div>
 
                                         

@@ -8,7 +8,6 @@
 
 
 <head>
-    <title>Modification Tournoi</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -1323,7 +1322,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Modifier Turnoi
+                                <div>Modifier Promotion
 
                                 </div>
                             </div>
@@ -1336,78 +1335,31 @@
                                 <div class="card-body">
 
                                   <form class="" method="POST" action="">
-                                  <div class="position-relative row form-group">
-                                            <label for="espace" class="col-sm-2 col-form-label">Espace Sportif</label>
-                                            <div class="col-sm-10">
-                                                <select class="mb-2 form-control" name="espace">
-                                               
-                                                	 <c:forEach var="item" items="${requestScope.espaces}" >
-														   <option value="${item['id_esp'] }">${item['nom_esp']}</option>
-													</c:forEach>                                                
-                                                </select>
-                                            </div>
-                                        </div>    
                                       <div class="position-relative row form-group">
-                                          <label for="NomT" class="col-sm-2 col-form-label">Nom Tournoi</label>
+                                          <label for="Dsicount" class="col-sm-2 col-form-label">Discount</label>
                                           <div class="col-sm-10">
-                                              <input name="nom" id="Nomt" value="${requestScope.tournoi['nom_trn']}" placeholder="Nom du Turnoi" type="text" class="form-control">
+                                              <input name="discount" id="discount" value="${requestScope.promotion['discount']}" type="number" class="form-control">
                                           </div>
                                       </div>
-                                      <div class="position-relative row form-group">
-                                          <label for="DescriptionT" class="col-sm-2 col-form-label">Description</label>
-                                          <div class="col-sm-10">
-                                              <input name="description" id="Desct" value="${requestScope.tournoi['description_trn']}" type="textarea" class="form-control">
-                                          </div>
-                                      </div>
-                                      <div class="position-relative row form-group">
-                                          <label for="Prix" class="col-sm-2 col-form-label">Prix</label>
-                                          <div class="col-sm-10">
-                                              <input name="prix" id="Prixt" value="${requestScope.tournoi['prix']}" type="text" class="form-control">
-                                          </div>
-                                      </div>
-                                      <div class="position-relative row form-group">
-                                          <label for="DateD" class="col-sm-2 col-form-label">Date debut</label>
-                                          <div class="col-sm-10">
-                                              <input name="date_deb" id="Dated" value="${requestScope.tournoi['date_debut']}" pattern="yyyy-MM-dd" type="date" class="form-control">
-                                          </div>
-                                      </div>
-                                      <div class="position-relative row form-group">
-                                          <label for="DateF" class="col-sm-2 col-form-label">Date Fin</label>
-                                          <div class="col-sm-10">
-                                              <input name="date_fin" id="DateF"  value="${requestScope.tournoi['date_fin']}" pattern="yyyy-MM-dd" type="date" class="form-control">
-                                          </div>
-                                      </div>
+
                                        <div class="position-relative row form-group">
-                                          <label for="Datei" class="col-sm-2 col-form-label">Date Fin Inscription</label>
-                                          <div class="col-sm-10">
-                                              <input name="date_fin_inc" id="Datei" value="${requestScope.tournoi['date_fin_ins']}" pattern="yyyy-MM-dd" type="date" class="form-control">
-                                          </div>
-                                      </div>
-                                      <div class="position-relative row form-group">
-                                          <label for="NombreT" class="col-sm-2 col-form-label">Nombre d'équipe</label>
-                                          <div class="col-sm-10">
-                                              <input name="nbr_team" id="Nomberet" value="${requestScope.tournoi['nbr_team']}" type="number" class="form-control";>
-                                          </div>
-                                      </div>
-                                      <div class="position-relative row form-group">
                                           <label for="check" class="col-sm-2 col-form-label">Status</label>
                                           <div class="col-sm-10">
                                               <div class="position-relative form-check">
                                                   <label class="form-check-label">
-                                                      <input id="check" name="Status" ${requestScope.tournoi['statut'] == 1 ? 'checked' : ''} type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
+                                                      <input id="check" name="Status" ${requestScope.promotion['statut'] == 1 ? 'checked' : ''} type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
                                                   </label>
                                               </div>
                                           </div>
                                    
                                     </div>
-
                                       <div class="position-relative row form-check">
                                           <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">
-                                              <button class="btn btn-secondary">Modifier</button>
+                                              <button class="btn btn-primary">Modifier</button>
                                           </div>
                                       </div>
-
                                   </form>
+
 
 
 
@@ -1827,7 +1779,6 @@
         </div>
     </div>
     <div class="app-drawer-overlay d-none animated fadeIn"></div><script type="text/javascript" src="assets/scripts/main.js"></script></body>
-
 
 
 </html>

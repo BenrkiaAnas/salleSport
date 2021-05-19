@@ -90,7 +90,7 @@ public class CreateTournoi extends HttpServlet {
 	    Espace espace = espacerepo.find(id_espace);
 	    Tournoi tournoi = new Tournoi(null, nom, description, prix, date_debut, date_fine, date_fin_insc, nbr_team, espace, 1l);
 	    repository.create(tournoi);
-		response.sendRedirect(request.getContextPath() + "/listTournoi");
+		response.sendRedirect(request.getContextPath() + "/listeTournoi");
 		
 		
 	}

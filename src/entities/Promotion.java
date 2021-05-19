@@ -10,6 +10,9 @@ public class Promotion {
 	private Long id_promo;
 	private Double discount;
 	private Long statut;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_gerer")
+	private Personne gerant;
 	
 	
 	public Promotion() {
@@ -17,11 +20,12 @@ public class Promotion {
 	}
 
 
-	public Promotion(Long id_promo, Double discount, Long statut) {
+	public Promotion(Long id_promo, Double discount, Long statut, Personne gerant) {
 		super();
 		this.id_promo = id_promo;
 		this.discount = discount;
 		this.statut = statut;
+		this.gerant = gerant;
 	}
 
 
@@ -55,10 +59,23 @@ public class Promotion {
 	}
 
 
+	public Personne getGerant() {
+		return gerant;
+	}
+
+
+	public void setGerant(Personne gerant) {
+		this.gerant = gerant;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Promotion [id_promo=" + id_promo + ", discount=" + discount + ", statut=" + statut + "]";
+		return "Promotion [id_promo=" + id_promo + ", discount=" + discount + ", statut=" + statut + ", gerant="
+				+ gerant + "]";
 	}
+
+
 	
 	
 

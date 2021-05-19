@@ -3,8 +3,10 @@ package app;
 import java.util.List;
 
 import dao.AbonnementRepository;
+import dao.CategorieRepository;
 import dao.EspaceRepository;
 import dao.PersonneRepository;
+import dao.PromotionRepository;
 import dao.TournoiRepository;
 import dao.Type_abonnementRepository;
 import entities.Abonnement;
@@ -41,7 +43,8 @@ public class Application {
 		/*Personne personneDelete = personneRepository.find(2l);
 		personneRepository.delete(personneDelete);*/
 
-		
+		//CategorieRepository categorieRepository = new CategorieRepository();
+		PromotionRepository promotionRepository = new PromotionRepository();
 		
 		
 		

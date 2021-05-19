@@ -49,12 +49,12 @@
                                       
                                     >
                                     <li>
-                                        <a href="/listPlan" >
+                                        <a href="/salleSport/listPlan" >
                                             <i class="metismenu-icon"></i> Liste Plans
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/createPlan" >
+                                        <a href="/salleSport/createPlan" >
                                             <i class="metismenu-icon"></i>Crée Plan
                                         </a>
                                     </li>
@@ -71,12 +71,12 @@
                                       
                                     >
                                     <li>
-                                        <a href="/listeCategorie" >
+                                        <a href="/salleSport/listeCategorie" >
                                             <i class="metismenu-icon"></i> Liste Catégories
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/createCategorie" >
+                                        <a href="/salleSport/createCategorie" >
                                             <i class="metismenu-icon"></i>Crée Catégorie
                                         </a>
                                     </li>
@@ -85,7 +85,7 @@
                             </li>
                             
                             <li>
-                                <a href="/listeGerant">
+                                <a href="/salleSport/listeGerant">
                                     <i class="metismenu-icon pe-7s-browser"></i>Gérants
                                 </a>
                                 
@@ -99,12 +99,12 @@
                                       
                                     >
                                     <li>
-                                        <a href="pages-login.html" >
+                                        <a href="/salleSport/espaces" >
                                             <i class="metismenu-icon"></i> Liste Espaces
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="pages-login-boxed.html" >
+                                        <a href="/salleSport/createEspace" >
                                             <i class="metismenu-icon"></i>Crée Espace
                                         </a>
                                     </li>

@@ -17,14 +17,14 @@ public class Terrain {
 	private Espace espace;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_cate")
-	private Espace categorie;
+	private Categorie categorie;
 	private Long statut;
 	
 	public Terrain() {
 		super();
 	}
 
-	public Terrain(Long id_ter, String nom_ter, Double prix, String img_ter, Espace espace, Espace categorie,
+	public Terrain(Long id_ter, String nom_ter, Double prix, String img_ter, Espace espace, Categorie categorie,
 			Long statut) {
 		super();
 		this.id_ter = id_ter;
@@ -76,11 +76,11 @@ public class Terrain {
 		this.espace = espace;
 	}
 
-	public Espace getCategorie() {
+	public Categorie getCategorie() {
 		return categorie;
 	}
 
-	public void setCategorie(Espace categorie) {
+	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
 
@@ -97,6 +97,10 @@ public class Terrain {
 		return "Terrain [id_ter=" + id_ter + ", nom_ter=" + nom_ter + ", prix=" + prix + ", img_ter=" + img_ter
 				+ ", espace=" + espace + ", categorie=" + categorie + ", statut=" + statut + "]";
 	}
+
+	
+
+	
 	
 	
 
