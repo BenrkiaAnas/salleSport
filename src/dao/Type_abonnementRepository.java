@@ -25,11 +25,12 @@ public class Type_abonnementRepository extends Repository<Type_abonnement>{
 		List<Type_abonnement> abonnements = new ArrayList();
 		for (Terrain terrain: terrains) {
 			
-			Type_abonnement abon = (Type_abonnement) em.createQuery("from "+entityClass.getSimpleName()+ " where id_ter='"+terrain.getId_ter()+"'").getSingleResult();
-			
-			if(abon != null)
-			{
-				abonnements.add(abon);
+			List<Type_abonnement> abon =  em.createQuery("from "+entityClass.getSimpleName()+ " where id_ter='"+terrain.getId_ter()+"'").getResultList();
+			for (Type_abonnement abonement: abon) {
+				
+				abonnements.add(abonement);
+				
+				
 			}
 		}
 		

@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import entities.Espace;
@@ -31,6 +32,24 @@ public class TerrainRepository extends Repository<Terrain>{
 		EspaceRepository espaceRepository = new EspaceRepository();
 		Espace espace = espaceRepository.findEspaceByCurrentUser(id);
 		return  em.createQuery("from "+entityClass.getSimpleName()+ " where id_esp='"+espace.getId_esp()+"'").getResultList();
+	}
+	
+	public List<Terrain> getEspaceData(Espace espace)
+	{
+		List<Terrain> terrains = em.createQuery("from "+entityClass.getSimpleName()+ " where id_esp='"+espace.getId_esp()+"'").getResultList();
+		espace.setTerrains(terrains);
+		
+		return espace.getTerrains();
+		
+	}
+	
+	public List<Terrain> getEspaceDataAndCategorie(Espace espace,Long id_cate)
+	{
+		List<Terrain> terrains = em.createQuery("from "+entityClass.getSimpleName()+ " where id_esp='"+espace.getId_esp()+"'"+ " and id_cate='"+id_cate+"'").getResultList();
+		espace.setTerrains(terrains);
+		
+		return espace.getTerrains();
+		
 	}
 	
 

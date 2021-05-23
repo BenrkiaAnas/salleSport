@@ -51,7 +51,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <h6 class="mb-0">Pas de compte? <a href="javascript:void(0);" class="text-primary">Créer Compte</a></h6>
+                                                <h6 class="mb-0">Pas de compte? <a href="/salleSport/register" class="text-primary">Créer Compte</a></h6>
 
                                             </div>
                                             

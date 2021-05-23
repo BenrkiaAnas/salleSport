@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import entities.Espace;
 import entities.Personne;
 
 public class PersonneRepository extends Repository<Personne>{
@@ -20,6 +21,8 @@ public class PersonneRepository extends Repository<Personne>{
 	{
 		return em.createQuery("from "+entityClass.getSimpleName()+" where id_role = '2'").getResultList();
 	}
+	
+	
 
 
 }

@@ -85,13 +85,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12" style="text-align: center">
-                                            <button class="btn-wide btn-pill btn-shadow btn-hover-shine btn btn-primary btn-lg">Create Account</button>
+                                            <button class="btn-wide btn-pill btn-shadow btn-hover-shine btn btn-primary btn-lg">Crée Compte</button>
                                         </div>
                                     </form>
                                   
                                     <div class="divider row"></div>
                                     <h6 class="mb-0">Vous avez déjà un compte? 
-                                        <a href="javascript:void(0);" class="text-primary">Se Connecter</a> | <a href="javascript:void(0);" class="text-primary">Recover Password</a>
+                                        <a href="/salleSport/login" class="text-primary">Se Connecter</a> 
                                     </h6>
                                 </div>
                                

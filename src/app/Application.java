@@ -3,6 +3,7 @@ package app;
 import java.util.List;
 
 import dao.AbonnementRepository;
+import dao.AccessoireRepository;
 import dao.CategorieRepository;
 import dao.EspaceRepository;
 import dao.PersonneRepository;
@@ -10,14 +11,15 @@ import dao.PromotionRepository;
 import dao.TournoiRepository;
 import dao.Type_abonnementRepository;
 import entities.Abonnement;
+import entities.Accessoire;
 import entities.Espace;
 import entities.Personne;
+import entities.Terrain;
 import entities.Tournoi;
 import entities.Type_abonnement;
 
 public class Application {
 	public static void main(String[] args) {
-		PersonneRepository personneRepository = new PersonneRepository();
 		
 		//Type_abonnementRepository abonnementRepo = new Type_abonnementRepository();
 		//List<Type_abonnement> plan = abonnementRepo.getAllPlans();
@@ -44,8 +46,27 @@ public class Application {
 		personneRepository.delete(personneDelete);*/
 
 		//CategorieRepository categorieRepository = new CategorieRepository();
-		PromotionRepository promotionRepository = new PromotionRepository();
 		
+		AccessoireRepository accessoireRepository = new AccessoireRepository();
+		
+		EspaceRepository espaceRepository = new EspaceRepository();
+		
+		List<Espace> espaces = espaceRepository.findAll();
+		
+		for(Espace espace: espaces)
+		{
+			accessoireRepository.getAllDataEspace(espace);
+		}
+		
+		for(Espace espace: espaces)
+		{
+			System.out.println(espace.getTerrains());
+			
+			for(Terrain ter: espace.getTerrains())
+			{
+				System.out.println(ter.getAccessoires());
+			}
+		}
 		
 		
 		

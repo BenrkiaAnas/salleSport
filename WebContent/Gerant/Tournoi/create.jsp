@@ -109,19 +109,7 @@
                                             <div class="col-sm-10">
                                                 <input name="nbr_team" id="Nomberet" type="number" class="form-control";>
                                             </div>
-                                        </div>
-                                        <div class="position-relative row form-group">
-                                            <label for="check" class="col-sm-2 col-form-label">Status</label>
-                                            <div class="col-sm-10">
-                                                <div class="position-relative form-check">
-                                                    <label class="form-check-label">
-                                                        <input id="check" name="Status" type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        <div>
-                                        </div>
-                                      </div>
+                                        </div>                                      
 
                                         <div class="position-relative row form-check">
                                             <div class="col-sm-10 offset-sm-2" style="padding: 0px !important">

@@ -31,5 +31,17 @@ public class EspaceRepository extends Repository<Espace>{
 	{
 		return em.createQuery("from "+entityClass.getSimpleName()+ " where id_gerer='"+id+"'").getResultList();
 	}
+	
+	public void getFreshData()
+	{
+		EspaceRepository espaceRepository = new EspaceRepository();
+		List<Espace> espaces = espaceRepository.findAll();
+		AccessoireRepository accessoireRepository = new AccessoireRepository();
+		
+		for(Espace espace: espaces)
+		{
+			accessoireRepository.getAllDataEspace(espace);
+		}
+	}
 
 }

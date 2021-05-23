@@ -14,12 +14,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.AccessoireRepository;
 import dao.CategorieRepository;
 import entities.Accessoire;
 import entities.Categorie;
+import entities.Personne;
 import servlets.admin.categories.CreateCategorie;
 @WebServlet("/createAccessoire")
 @MultipartConfig
@@ -47,6 +49,8 @@ public class CreateAccessoire extends HttpServlet{
 	Long idcategorie = Long.parseLong(request.getParameter("categorie"));
 	CategorieRepository categorierepo = new CategorieRepository();
 	Categorie categorie = categorierepo.find(idcategorie);
+	HttpSession session = request.getSession();
+    Personne currentUser = (Personne) session.getAttribute("personne");
 	
 	response.setContentType("text/html;charset=UTF-8");
 	
@@ -62,7 +66,7 @@ public class CreateAccessoire extends HttpServlet{
 		if(success)
 		{
 		    AccessoireRepository accessoireRepository = new AccessoireRepository();
-			Accessoire accessoire = new Accessoire(null, nom, prix, filename,description, categorie, 1l);
+			Accessoire accessoire = new Accessoire(null, nom, prix, filename,description, categorie,currentUser, 1l);
 		    accessoireRepository.create(accessoire);
 			response.sendRedirect(request.getContextPath() + "/listAccessoire");
 		}else {

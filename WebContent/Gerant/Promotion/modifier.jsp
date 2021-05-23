@@ -66,7 +66,7 @@
                                           <div class="col-sm-10">
                                               <div class="position-relative form-check">
                                                   <label class="form-check-label">
-                                                      <input id="check" name="Status" ${requestScope.promotion['statut'] == 1 ? 'checked' : ''} type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
+                                                      <input id="check" name="statut" ${requestScope.promotion['statut'] == 1 ? 'checked' : ''} type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
                                                   </label>
                                               </div>
                                           </div>

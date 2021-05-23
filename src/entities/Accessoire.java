@@ -16,6 +16,9 @@ public class Accessoire {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_cate")
 	private Categorie categorie;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_gerant")
+	private Personne gerant;
 	private Long statut;
 	
 	
@@ -24,11 +27,8 @@ public class Accessoire {
 	}
 
 
-	
-
-
 	public Accessoire(Long id_acc, String nom_acc, Double prix_acc, String image_acc, String description,
-			Categorie categorie, Long statut) {
+			Categorie categorie, Personne gerant, Long statut) {
 		super();
 		this.id_acc = id_acc;
 		this.nom_acc = nom_acc;
@@ -36,27 +36,9 @@ public class Accessoire {
 		this.image_acc = image_acc;
 		this.description = description;
 		this.categorie = categorie;
+		this.gerant = gerant;
 		this.statut = statut;
 	}
-
-
-
-
-
-	public String getDescription() {
-		return description;
-	}
-
-
-
-
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-
-
 
 
 	public Long getId_acc() {
@@ -99,6 +81,16 @@ public class Accessoire {
 	}
 
 
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
 	public Categorie getCategorie() {
 		return categorie;
 	}
@@ -106,6 +98,16 @@ public class Accessoire {
 
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
+	}
+
+
+	public Personne getGerant() {
+		return gerant;
+	}
+
+
+	public void setGerant(Personne gerant) {
+		this.gerant = gerant;
 	}
 
 
@@ -119,14 +121,18 @@ public class Accessoire {
 	}
 
 
-
-
-
 	@Override
 	public String toString() {
 		return "Accessoire [id_acc=" + id_acc + ", nom_acc=" + nom_acc + ", prix_acc=" + prix_acc + ", image_acc="
-				+ image_acc + ", description=" + description + ", categorie=" + categorie + ", statut=" + statut + "]";
+				+ image_acc + ", description=" + description + ", categorie=" + categorie + ", gerant=" + gerant
+				+ ", statut=" + statut + "]";
 	}
+
+
+	
+
+
+	
 
 
 	

@@ -1,5 +1,9 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +23,8 @@ public class Terrain {
 	@JoinColumn(name = "id_cate")
 	private Categorie categorie;
 	private Long statut;
+	@Transient
+	private List<Accessoire> accessoires = new ArrayList<Accessoire>();
 	
 	public Terrain() {
 		super();
@@ -92,11 +98,27 @@ public class Terrain {
 		this.statut = statut;
 	}
 
+	public List<Accessoire> getAccessoires() {
+		return accessoires;
+	}
+
+	public void setAccessoires(List<Accessoire> accessoires) {
+		this.accessoires = accessoires;
+	}
+
 	@Override
 	public String toString() {
+		
+		
+	
 		return "Terrain [id_ter=" + id_ter + ", nom_ter=" + nom_ter + ", prix=" + prix + ", img_ter=" + img_ter
-				+ ", espace=" + espace + ", categorie=" + categorie + ", statut=" + statut + "]";
+				+ ", espace=" + espace + ", categorie=" + categorie + ", statut=" + statut + ", accessoires="
+				+ accessoires.toArray().toString() + "]";
 	}
+
+	
+
+	
 
 	
 

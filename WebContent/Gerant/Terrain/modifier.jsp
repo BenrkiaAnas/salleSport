@@ -79,7 +79,7 @@
                                             <div class="col-sm-10">
                                                 <div class="position-relative form-check">
                                                     <label class="form-check-label">
-                                                        <input ${requestScope.terrain['statut'] == 1 ? 'checked' : ''} id="check" name="Status" type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
+                                                        <input ${requestScope.terrain['statut'] == 1 ? 'checked' : ''} id="check" name="statut" type="checkbox" class="form-check-input " style="margin-top: 0px"!important>
                                                     </label>
                                                 </div>
                                             </div>

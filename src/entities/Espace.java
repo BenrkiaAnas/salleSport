@@ -1,6 +1,10 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
+
 
 @Entity
 @Table(name="espace")
@@ -22,6 +26,8 @@ public class Espace {
 	private Personne gerer;
 	private Long liked;
 	private Long deslike;
+	@Transient
+	private List<Terrain> terrains = new ArrayList<Terrain>();
 	
 	public Espace() {
 		super();
@@ -116,15 +122,36 @@ public class Espace {
 	public void setGerer(Personne gerer) {
 		this.gerer = gerer;
 	}
+	
+	
+
+
+
+	public List<Terrain> getTerrains() {
+		return terrains;
+	}
+
+
+
+	public void setTerrains(List<Terrain> terrains) {
+		this.terrains = terrains;
+	}
 
 
 
 	@Override
 	public String toString() {
+		
+
+		
 		return "Espace [id_esp=" + id_esp + ", nom_esp=" + nom_esp + ", pub=" + pub + ", desc_esp=" + desc_esp
 				+ ", img_esp=" + img_esp + ", create=" + create + ", gerer=" + gerer + ", liked=" + liked + ", deslike="
-				+ deslike + "]";
+				+ deslike + ", terrains=" + terrains.toArray().toString() + "]";
 	}
+
+
+
+
 	
 	
 	
