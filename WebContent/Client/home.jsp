@@ -490,30 +490,31 @@ for (var attr in meta) {
               </span>
               <!-- Customer Account Login -->
               <div id="loginBox" class="dropdown-menu text-left">
-                <form method="post" action="https://cs-citycycle.myshopify.com/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" />
+                <form method="post" action="" id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" />
                 <div id="bodyBox">
                   <ul class="control-container customer-accounts list-unstyled">
                     <li class="clearfix">
-                      <label for="customer_email_box" class="control-label">Email Address <span class="req">*</span></label>
-                      <input type="email" value="" name="customer[email]" id="customer_email_box" class="form-control" />
+                      <label for="customer_email_box" class="control-label">Email<span class="req">*</span></label>
+                      <input type="email" value="" name="email" id="customer_email_box" class="form-control" />
                     </li>
 
                     <li class="clearfix">
-                      <label for="customer_password_box" class="control-label">Password <span class="req">*</span></label>
-                      <input type="password" value="" name="customer[password]" id="customer_password_box" class="form-control password" />
+                      <label for="customer_password_box" class="control-label">Mot de Passe <span class="req">*</span></label>
+                      <input type="password" value="" name="pwd" id="customer_password_box" class="form-control password" />
                     </li>
 
                     <li class="clearfix">
                       <span class="required field">*required field</span>
                     </li>
-                    <li class="clearfix">
+                    <!--    <li class="clearfix">
                       <a href="account/login.html#recover"><span class="red">?</span> Forgot your password</a>
                     </li>
+                    -->
                     <li class="clearfix">
                       <button class="btn btn-1" type="submit">Login</button>
                     </li>
                     <li class="clearfix">
-                      <a class="action btn btn-3" href="account/register.html">Create an account</a>
+                      <a class="action btn btn-3" href="salleSport/registerClient">Crée Compte</a>
                     </li>
                   </ul>
                 </div>
@@ -1798,7 +1799,7 @@ for (var attr in meta) {
 
 
 
-          <img src="assets/images/qjpg17_6af99594-ab69-4820-949c-3084a228e615_large4fa9.jpg?v=1438660560" class="not-rotation img-responsive front" alt="quis scelerisque telluso" />
+          <img src="assets/foot.jpg?v=1438660560" class="not-rotation img-responsive front" alt="quis scelerisque telluso" />
 
         </div>
       </a>
@@ -1872,7 +1873,7 @@ for (var attr in meta) {
 
 
 
-          <img src="assets/images/rjpg18_large7a59.jpg?v=1438145839" class="not-rotation img-responsive front" alt="Gravida est quis euismod" />
+          <img src="assets/stade.jpg" class="not-rotation img-responsive front" alt="Gravida est quis euismod" />
           <div class="mask"></div>
 
         </div>
@@ -1906,7 +1907,7 @@ for (var attr in meta) {
 		<div class="info-left col-sm-6">
           <h3 class="pro-title"><a class="title-5" href="products/gravida-est-quis-euismod.html">Description</a></h3>
           <div class="description">
-            <div class="col-md-6 big-img"><img src="assets/images/ojpg15_larged12b.jpg?v=1438139916"></div>
+            <div class="col-md-6 big-img"><img style="width:28px;" src="assets/racket.jpg"></div>
 <div class="col-md-6">
 <p>${item['desc_esp']}</p>
 
@@ -1915,7 +1916,7 @@ for (var attr in meta) {
 
 
 <li>
-<img src="assets/files/icon1_largef500.png?2040554256664932759">${accessoire['nom_acc']}</li>
+<img style="width:28px;"src="assets/racket.jpg">${accessoire['nom_acc']}</li>
 
 
 </c:forEach>

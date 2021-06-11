@@ -1388,7 +1388,7 @@ for (var attr in meta) {
 	                                  <li class="link-element first">
             <a href="collections/womens-cycle-city-1.html" class="link-img">
               
-              <img src="assets/5_large30f4.jpg" alt="bmx" />
+              <img src="assets/espace.jpg" alt="bmx" />
               
             </a>
             <div class="group_element">            

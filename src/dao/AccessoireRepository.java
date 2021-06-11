@@ -18,6 +18,7 @@ public class AccessoireRepository extends Repository<Accessoire>{
 	{
 		TerrainRepository repository =new TerrainRepository();
 		List<Terrain> terrains = repository.getEspaceData(espace);
+		System.out.println(terrains);
 		for(Terrain ter : terrains)
 		{
 			List<Accessoire> accessoire =  em.createQuery("from "+entityClass.getSimpleName()+ " where id_cate='"+ter.getCategorie().getId_cate()+"' and id_gerant = '"+espace.getGerer().getId_personne()+"'").getResultList();

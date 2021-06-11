@@ -1422,7 +1422,7 @@ for (var attr in meta) {
 
 
 
-            <img src="assets/rjpg18_1024x10247a59.jpg" alt="Gravida est quis euismod" />
+            <img src="assets/terrains.jpg" alt="Gravida est quis euismod" />
 
 
           </div>
@@ -1434,16 +1434,16 @@ for (var attr in meta) {
 
 
               <div class="image active">
-                <a href="assets/rjpg18_1024x10247a59.jpg" class="cloud-zoom-gallery">
-                  <img src="assets/rjpg18_large7a59.jpg" alt="Gravida est quis euismod" />
+                <a href="assets/terrains.jpg" class="cloud-zoom-gallery">
+                  <img src="assets/terrains.jpg" alt="Gravida est quis euismod" />
                 </a>
               </div>
 
 
 
               <div class="image">
-                <a href="assets/sjpg19_1024x1024751f.jpg" class="cloud-zoom-gallery">
-                  <img src="assets/sjpg19_large751f.jpg" alt="Gravida est quis euismod" />
+                <a href="assets/terrains.jpg" class="cloud-zoom-gallery">
+                  <img src="assets/terrains.jpg" alt="Gravida est quis euismod" />
                 </a>
               </div>
 
@@ -1498,7 +1498,7 @@ for (var attr in meta) {
 
 
 
-          <form id="add-item-form product-actions" action="https://cs-citycycle.myshopify.com/cart/add" method="post" class="variants clearfix">
+
             <div class="product-options ">
 
 
@@ -1538,22 +1538,35 @@ for (var attr in meta) {
      <c:forEach var="accessoire" items="${requestScope.terrain['accessoires']}" >
      <div style="display: inline-block;">
      <input type="hidden" id="${accessoire['nom_acc']}-val" value="${accessoire['prix_acc']}" />
+     <input type="hidden" id="${accessoire['id_acc']}-id" value="${accessoire['id_acc']}" />
+     
+    
+     <input type="hidden" id="id_accessoires" value="[]" />
      
      
      
     
      
-       <input type="checkbox" style="display: inline-block;" id="${accessoire['nom_acc']}" onclick="getPrice_${accessoire['nom_acc']}()" />
-<div style="display: inline-block;"><img style="margin-left: 5px" src="assets/icon1_largef500.png"><span style="margin-left: 5px">${accessoire['nom_acc']}</span> - <span style="margin-left: 5px">${accessoire['prix_acc']} DH</span> </div>
+       <input type="checkbox" style="display: inline-block;" id="${accessoire['nom_acc']}" data-id="${accessoire['id_acc']}" onclick="getPrice_${accessoire['nom_acc']}()" />
+<div style="display: inline-block;"><img style="margin-left: 5px;width:28px;" src="assets/racket.jpg"><span style="margin-left: 5px">${accessoire['nom_acc']}</span> - <span style="margin-left: 5px">${accessoire['prix_acc']} DH</span> </div>
            </div> 
             <script type="text/javascript">
+            
+            
             
             function getPrice_${accessoire['nom_acc']}() {
             	  let checkBox = document.getElementById("${accessoire['nom_acc']}");
             	     
             	     if (checkBox.checked == true){
+            	    	 
+            	    	    $("#form_reserv").append("<input type='hidden' name='accesoires[]' value='${accessoire['id_acc']}' id='${accessoire['nom_acc']}_input' />");
+            	    	    
             	    	    let price = document.getElementById("${accessoire['nom_acc']}-val").value;
             	    	    let initial_price = document.getElementById("prix_total").value;
+            	    	    
+            	    	    let id_acc = document.getElementById("${accessoire['id_acc']}-id").value;
+            	    	    
+            	    	    
             	    	    
             	    	    console.log(price);
             	    	    console.log(initial_price);
@@ -1563,6 +1576,7 @@ for (var attr in meta) {
             	    	    $("#prix_total").val(all)
             	    	    console.log(price.value);
             	   	}else{
+            	   		$("#${accessoire['nom_acc']}_input").remove();
             	   		let price = document.getElementById("${accessoire['nom_acc']}-val").value;
         	    	    let all_total = document.getElementById("prix_total").value;
         	    	    
@@ -1595,14 +1609,45 @@ for (var attr in meta) {
                   <span id="prix-total">${requestScope.terrain['prix']}</span> DH
                 </div>
               </div>
-
-              <div class="addto-cart-wrapper clearfix">
-                <div class="process-addtocart" style="display: none;"><i class="fa fa-spinner fa-pulse fa-2x"></i></div>
-                <button id="add-to-cart" class="btn btn-1 add-to-cart" data-parent=".product-information" type="submit" name="add"><i class="fa fa-shopping-cart"></i>Reserver</button>
+              
+              <form method="get" action="/salleSport/loginClient" id="form_reserv">
+              
+              <input type="hidden" name="terrain" id="terrain" value="${requestScope.terrain['id_ter']}" />
+               
+               <div class="clearfix">
+               
+                <button type="submit" onclick="redirect(event)" class="btn btn-1 add-to-cart"  name="add"><i class="fa fa-shopping-cart"></i>Reserver</button>
                 
               </div>
+                
+                
+              </form>
+              
+              
+              
+              
+              
+              
+              <script type="text/javascript">
+            
+            
+            
+            function redirect(e) {
+            	  
+            	  $("#form_reserv").submit();
+            	  
+			}
+     
+   
+     
+     </script>  
+              
+          
+              
+            
+
+              
             </div>
-          </form>
 
       
 
@@ -1680,13 +1725,13 @@ for (var attr in meta) {
           </div>
           <div class="col-md-12 tabs-content">
             <div class="tab-content">
-              <div class="tab-pane active" id="desc"><div class="col-md-6 big-img"><img src="assets/ojpg15_larged12b.jpg"></div>
+              <div class="tab-pane active" id="desc"><div class="col-md-6 big-img"><img src="assets/terrains.jpg"></div>
 <div class="col-md-6">
 <p>${requestScope.terrain['espace']['desc_esp']}</p>
 <ul>
  <c:forEach var="accessoire" items="${requestScope.terrain['accessoires']}" >
        <li>
-<img src="assets/icon1_largef500.png">${accessoire['nom_acc']}</li>
+<img style="width:28px;" src="assets/racket.jpg">${accessoire['nom_acc']}</li>
 <li>
                    
 </c:forEach>
@@ -1755,29 +1800,8 @@ Dry the surface immediately with a clean, soft towel.</p></div>
         Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
       }
 
-      var add_to_cart = '#add-to-cart';
-      var $price = '#purchase-' + selector.product.id.toString() + ' .detail-price';
-      if (variant && variant.available) {
-        $(add_to_cart).removeClass('disabled').removeAttr('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
-        if(variant.compare_at_price == null){
-          $($price).html('<span class="price">'+Shopify.formatMoney(variant.price, "${{amount}}")+'</span>');
 
-                                                                    /* Update currency */
-                                                                    currenciesCallbackSpecial('#product-information span.money');
-
-                         } else {
-                         $($price).html('<span class="price_sale">'+Shopify.formatMoney(variant.price, "${{amount}}") + '</span>' + '<del class="price_compare">' + Shopify.formatMoney(variant.compare_at_price, "${{amount}}") + '</del>');
-
-                                                                                            /* Update currency */
-                                                                                            currenciesCallbackSpecial('#product-information span.money');
-
-                                        }
-                                        } else {
-                                        $(add_to_cart).addClass('disabled').attr('disabled', 'disabled'); // set add-to-cart button to unavailable class and disable button
-          var message = variant ? "Sold Out" : "Unavailable";
-          $($price).html('<span class="unavailable">' + message + '</span>');
-        }
-      };
+      
 
       new Shopify.OptionSelectors("product-select-991015684", { product: {"id":991015684,"title":"Gravida est quis euismod","handle":"gravida-est-quis-euismod","description":"\u003cdiv class=\"col-md-6 big-img\"\u003e\u003cimg src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/ojpg15_large.jpg?v=1438139916\"\u003e\u003c\/div\u003e\n\u003cdiv class=\"col-md-6\"\u003e\n\u003cp\u003eDerailleur N\/A\u003cbr\u003eXO 1 DH 7 speed \u003cbr\u003eCrankset SRAM X01 DH carbon CR \u003cbr\u003eBottom Bracket BB PF MTB 107 \u003cbr\u003eChain Tensioner E-13 LG \u003cbr\u003eChain Sram PC X1 \u003cbr\u003ePedals N\/A\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cimg src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/files\/icon1_large.png?2040554256664932759\"\u003eChain Tensioner E-13 LG\u003c\/li\u003e\n\u003cli\u003e\n\u003cimg src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/files\/icon2_large.png?15864747566528653573\"\u003eCpd CS HG795\u003c\/li\u003e\n\u003cli\u003e\n\u003cimg src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/files\/icon3_large.png?9148937422088368092\"\u003eDerailleur N\/A\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e","published_at":"2015-07-27T05:07:00-04:00","created_at":"2015-07-27T05:07:34-04:00","vendor":"Vendor 1","type":"Sweaters Wear","tags":["$100 - $200","Above $200","Best Seller","Black","Blue","Brown","Gray","Green","Hermes","L","M","Orange","Pink","Red","S","Silver","Under $100","White","XL","Yellow"],"price":20000,"price_min":20000,"price_max":20000,"available":true,"price_varies":false,"compare_at_price":null,"compare_at_price_min":0,"compare_at_price_max":0,"compare_at_price_varies":false,"variants":[{"id":3821579652,"title":"black \/ M","option1":"black","option2":"M","option3":null,"sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Gravida est quis euismod - black \/ M","public_title":"black \/ M","options":["black","M"],"price":20000,"weight":0,"compare_at_price":null,"inventory_quantity":1,"inventory_management":null,"inventory_policy":"deny","barcode":null},{"id":3821579716,"title":"white \/ M","option1":"white","option2":"M","option3":null,"sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Gravida est quis euismod - white \/ M","public_title":"white \/ M","options":["white","M"],"price":20000,"weight":0,"compare_at_price":null,"inventory_quantity":1,"inventory_management":null,"inventory_policy":"deny","barcode":null},{"id":3821579780,"title":"red \/ M","option1":"red","option2":"M","option3":null,"sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Gravida est quis euismod - red \/ M","public_title":"red \/ M","options":["red","M"],"price":20000,"weight":0,"compare_at_price":null,"inventory_quantity":1,"inventory_management":null,"inventory_policy":"deny","barcode":null},{"id":3821579844,"title":"green \/ M","option1":"green","option2":"M","option3":null,"sku":"","requires_shipping":true,"taxable":true,"featured_image":null,"available":true,"name":"Gravida est quis euismod - green \/ M","public_title":"green \/ M","options":["green","M"],"price":20000,"weight":0,"compare_at_price":null,"inventory_quantity":1,"inventory_management":null,"inventory_policy":"deny","barcode":null}],"images":["\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/rjpg18.jpg?v=1438145839","\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/sjpg19.jpg?v=1438145840"],"featured_image":"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/rjpg18.jpg?v=1438145839","options":["Color","Size"],"media":[{"alt":null,"id":75102027825,"position":1,"preview_image":{"aspect_ratio":1.286,"height":622,"width":800,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/rjpg18.jpg?v=1568765580"},"aspect_ratio":1.286,"height":622,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/rjpg18.jpg?v=1568765580","width":800},{"alt":null,"id":75102060593,"position":2,"preview_image":{"aspect_ratio":1.286,"height":622,"width":800,"src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/sjpg19.jpg?v=1568765580"},"aspect_ratio":1.286,"height":622,"media_type":"image","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/sjpg19.jpg?v=1568765580","width":800}],"content":"\u003cdiv class=\"col-md-6 big-img\"\u003e\u003cimg src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/products\/ojpg15_large.jpg?v=1438139916\"\u003e\u003c\/div\u003e\n\u003cdiv class=\"col-md-6\"\u003e\n\u003cp\u003eDerailleur N\/A\u003cbr\u003eXO 1 DH 7 speed \u003cbr\u003eCrankset SRAM X01 DH carbon CR \u003cbr\u003eBottom Bracket BB PF MTB 107 \u003cbr\u003eChain Tensioner E-13 LG \u003cbr\u003eChain Sram PC X1 \u003cbr\u003ePedals N\/A\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cimg src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/files\/icon1_large.png?2040554256664932759\"\u003eChain Tensioner E-13 LG\u003c\/li\u003e\n\u003cli\u003e\n\u003c
        src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/files\/icon2_large.png?15864747566528653573\"\u003eCpd CS HG795\u003c\/li\u003e\n\u003cli\u003e\n\u003cimg src=\"\/\/cdn.shopify.com\/s\/files\/1\/0938\/3122\/files\/icon3_large.png?9148937422088368092\"\u003eDerailleur N\/A\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/div\u003e"}, onVariantSelected: selectOptionsCallback, enableHistoryState: true });
@@ -2344,46 +2368,6 @@ Dry the surface immediately with a clean, soft towel.</p></div>
 </script>
 
 
-  <div id="ajax-cart-modal" class="popup-pro-wrapper" style="display: none; position: fixed;  top: 0%; left: 0%; width: 100%; height: 100%; ">
-  <div class="ajax-cart-modal-wrapper">
-    <div class="ajax-cart-overlay"></div>
-    <div class="ajax-cart-loading" style="color:#fff"><i class="fa fa-spinner fa-pulse fa-2x"></i></div>
-    <div class="ajax-cart-box" style="display: none;">
-      <div class="ajax-cart-left">
-        <div class="clearfix">
-          <div class="ajax-cart-note">
-            <span class="cirle"><i class="fa fa-check"></i></span>
-            Product successfully added to<a href="../cart.html" class="your_cart"> your Shopping Cart</a>
-          </div>
-          <div class="ajax-cart-product">
-            <div class="col-md-6 ajax-cart-image">
-            </div>
-            <div class="col-md-6 ajax-cart-desc">
-              <div class="ajax-cart-product-title"></div>
-              <div class="ajax-cart-price"></div>
-              <div class="ajax-cart-variant"></div>
-              <div class="ajax-cart-qty"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ajax-cart-right">
-        <div class="ajax-cart-number-product"></div>
-        <div class="ajax-cart-subtotal"></div>
-        <div class="ajax-cart-group-actions">
-          <div class="ajax-cart-continue">
-            <a href="javascript:void(null)" onclick="ajaxCartHide()" class="btn btn-2"><i class="fa fa-caret-left"></i>Continue Shopping</a>
-          </div>
-          <div class="ajax-cart-next">
-            <a class="btn btn-1" href="../cart.html">Proceed to Checkout<i class="fa fa-caret-right"></i></a>
-          </div>
-        </div>
-        <div class="countDiv"></div>
-      </div>
-      <div class="ajax-cart-close" onclick="ajaxCartHide()"><i class="fa fa-times"></i></div>
-    </div>
-  </div>
-</div>
 
 
   <script src="assets/linkOptionSelectorsc282.js" type="text/javascript"></script>

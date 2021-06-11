@@ -8,12 +8,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.AccessoireRepository;
 import dao.CategorieRepository;
 import dao.EspaceRepository;
+import dao.PersonneRepository;
 import entities.Categorie;
 import entities.Espace;
+import entities.Personne;
 import entities.Terrain;
 
 /**
@@ -71,7 +74,22 @@ AccessoireRepository accessoireRepository = new AccessoireRepository();
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String email = request.getParameter("email");
+		String pwd = request.getParameter("pwd");
+		PersonneRepository personneRepository = new PersonneRepository();
+		Personne personneLogged = personneRepository.findBy(email, pwd);
+		System.out.println(personneLogged);
+		if(personneLogged.getStatut() == 1)
+		{
+			if(personneLogged.getId_role() == 3)
+			{
+				System.out.println("3andi access role");
+				HttpSession session = request.getSession();
+				session.setAttribute("personne", personneLogged);
+				response.sendRedirect(request.getContextPath() + "/home");
+
+			}
+		}
 	}
 
 }

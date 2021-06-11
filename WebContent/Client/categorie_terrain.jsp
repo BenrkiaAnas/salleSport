@@ -1397,7 +1397,7 @@ for (var attr in meta) {
 
 
 
-          <img src="assets/images/rjpg18_large7a59.jpg?v=1438145839" class="not-rotation img-responsive front" alt="Gravida est quis euismod" />
+          <img src="assets/espace.jpg" class="not-rotation img-responsive front" alt="Gravida est quis euismod" />
           <div class="mask"></div>
 
         </div>
@@ -1440,7 +1440,7 @@ for (var attr in meta) {
 
 
 <li>
-<img src="assets/files/icon1_largef500.png?2040554256664932759">${accessoire['nom_acc']}</li>
+<img style="width:28px;" src="assets/racket.jpg?2040554256664932759">${accessoire['nom_acc']}</li>
 
 
 </c:forEach>
