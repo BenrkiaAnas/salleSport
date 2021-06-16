@@ -40,7 +40,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Consulter Accessoire
+                                <div>Consulter Espace Sportif
 
                                 </div>
                             </div>

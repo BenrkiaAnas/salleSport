@@ -1,6 +1,8 @@
 package servlets.client;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AccessoireRepository;
+import dao.EspaceRepository;
+import dao.HorraireRepository;
+import dao.PlanningRepository;
 import dao.TerrainRepository;
+import entities.Espace;
+import entities.Horraire;
+import entities.Planning;
 import entities.Terrain;
 
 /**
@@ -37,6 +45,26 @@ public class TerrainClient extends HttpServlet {
 		AccessoireRepository accessoireRepository = new AccessoireRepository();
 		accessoireRepository.getAccessoireByTerrain(terrain);
 		request.setAttribute("terrain",terrain);	
+		
+		PlanningRepository planningRepository = new PlanningRepository();
+		List<Planning> plannings = planningRepository.getAllPlanningByTerrain(terrain.getId_ter());
+		
+		System.out.println(plannings);
+		
+		HorraireRepository horraireRepository = new HorraireRepository();
+		List<Horraire> horraires = horraireRepository.getAllHorraire(terrain.getId_ter());
+		
+		EspaceRepository espaceRepository = new EspaceRepository();
+		
+		List<Espace> espaces = espaceRepository.findAll();
+		
+		System.out.println(horraires);
+		
+		request.setAttribute("espaces", espaces);
+		
+		request.setAttribute("horraires", horraires);
+		request.setAttribute("plannings", plannings);
+		
 		request.getRequestDispatcher("Client/terrain.jsp").forward(request, response);
 	}
 

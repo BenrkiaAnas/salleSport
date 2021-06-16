@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -15,7 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import dao.CategorieRepository;
 import dao.TerrainRepository;
+import entities.Categorie;
 import entities.Terrain;
 import servlets.gerant.accessoire.ModifierAccessoire;
 
@@ -43,7 +46,9 @@ public class ModifierTerrain extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Long id = Long.parseLong(request.getParameter("update"));
-		
+		CategorieRepository categorieRepository = new CategorieRepository();
+		List<Categorie> categorie = categorieRepository.findAll();
+		request.setAttribute("categorie", categorie);
 		TerrainRepository repository = new TerrainRepository();
 		Terrain terrain =repository.find(id);	
 		request.setAttribute("terrain", terrain);
@@ -55,6 +60,7 @@ public class ModifierTerrain extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		CategorieRepository categorieRepository = new CategorieRepository();
 		TerrainRepository terrains = new TerrainRepository();		
 		Long id = Long.parseLong(request.getParameter("update"));		
 		Terrain terrain = terrains.find(id);
@@ -63,6 +69,7 @@ public class ModifierTerrain extends HttpServlet {
 		String image = terrain.getImg_ter();
 		String statut = request.getParameter("statut");
 		Part part = request.getPart("file");
+		Long id_cate = Long.parseLong(request.getParameter("categorie"));
 		String filename = part.getSubmittedFileName(); 
 		
 try (PrintWriter out = response.getWriter()) {
@@ -92,6 +99,9 @@ try (PrintWriter out = response.getWriter()) {
 			}else {
 				terrain.setStatut(1l);
 			}
+			Categorie categorie = categorieRepository.find(id_cate);
+			
+			terrain.setCategorie(categorie);
 			
 			terrain.setImg_ter(filename);
 			terrains.edit(terrain);

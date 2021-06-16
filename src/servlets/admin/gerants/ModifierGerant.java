@@ -55,10 +55,11 @@ public class ModifierGerant extends HttpServlet {
 		String prenom = request.getParameter("prenom");
 		String email = request.getParameter("email");
 		String mdp = request.getParameter("mdp");
-		String statut = request.getParameter("statut");
+		String statut = request.getParameter("Status");
 		personne.setNom(nom);
 		personne.setPrenom(prenom);
 		personne.setEmail(email);
+		System.out.println(personne);
 		if (mdp!="")
 		{
 			personne.setPwd(mdp);

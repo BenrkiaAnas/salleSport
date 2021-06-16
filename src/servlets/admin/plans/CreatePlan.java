@@ -45,6 +45,7 @@ public class CreatePlan extends HttpServlet {
 		String description = request.getParameter("description");
 	    Type_abonnement plan = new Type_abonnement(null,nom, prix, description, null,1l);
 	    abonnementRepository.create(plan);
+	    System.out.println(plan);
 	    response.sendRedirect(request.getContextPath() + "/listPlan");
 	}
 	

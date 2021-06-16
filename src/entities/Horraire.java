@@ -13,10 +13,10 @@ public class Horraire {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id_hor;
-	@Temporal(TemporalType.TIME)
-	private Date heure_depart;
-	@Temporal(TemporalType.TIME)
-	private Date heure_fin;
+	
+	private String heure_depart;
+	
+	private String heure_fin;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_plann")
 	private Planning planning;
@@ -28,7 +28,7 @@ public class Horraire {
 	}
 
 
-	public Horraire(Long id_hor, Date heure_depart, Date heure_fin, Planning planning, Long statut) {
+	public Horraire(Long id_hor, String heure_depart, String heure_fin, Planning planning, Long statut) {
 		super();
 		this.id_hor = id_hor;
 		this.heure_depart = heure_depart;
@@ -48,22 +48,22 @@ public class Horraire {
 	}
 
 
-	public Date getHeure_depart() {
+	public String getHeure_depart() {
 		return heure_depart;
 	}
 
 
-	public void setHeure_depart(Date heure_depart) {
+	public void setHeure_depart(String heure_depart) {
 		this.heure_depart = heure_depart;
 	}
 
 
-	public Date getHeure_fin() {
+	public String getHeure_fin() {
 		return heure_fin;
 	}
 
 
-	public void setHeure_fin(Date heure_fin) {
+	public void setHeure_fin(String heure_fin) {
 		this.heure_fin = heure_fin;
 	}
 
@@ -93,7 +93,8 @@ public class Horraire {
 		return "Horraire [id_hor=" + id_hor + ", heure_depart=" + heure_depart + ", heure_fin=" + heure_fin
 				+ ", planning=" + planning + ", statut=" + statut + "]";
 	}
-	
+
+
 	
 
 }

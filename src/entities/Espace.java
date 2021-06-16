@@ -28,6 +28,8 @@ public class Espace {
 	private Long deslike;
 	@Transient
 	private List<Terrain> terrains = new ArrayList<Terrain>();
+	@Transient
+	private List<Tournoi> tournois = new ArrayList<Tournoi>();
 	
 	public Espace() {
 		super();
@@ -139,6 +141,18 @@ public class Espace {
 
 
 
+	public List<Tournoi> getTournois() {
+		return tournois;
+	}
+
+
+
+	public void setTournois(List<Tournoi> tournois) {
+		this.tournois = tournois;
+	}
+
+
+
 	@Override
 	public String toString() {
 		
@@ -146,7 +160,7 @@ public class Espace {
 		
 		return "Espace [id_esp=" + id_esp + ", nom_esp=" + nom_esp + ", pub=" + pub + ", desc_esp=" + desc_esp
 				+ ", img_esp=" + img_esp + ", create=" + create + ", gerer=" + gerer + ", liked=" + liked + ", deslike="
-				+ deslike + ", terrains=" + terrains.toArray().toString() + "]";
+				+ deslike + ", terrains=" + terrains.toArray().toString() + tournois.toArray().toString() +"]";
 	}
 
 

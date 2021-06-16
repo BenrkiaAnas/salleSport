@@ -11,7 +11,7 @@ public class Team {
 	private String nom_team;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_trn")
-	private Espace tournoi;
+	private Tournoi tournoi;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_client")
 	private Personne client;
@@ -22,7 +22,7 @@ public class Team {
 	}
 
 
-	public Team(Long id_team, String nom_team, Espace tournoi, Personne client) {
+	public Team(Long id_team, String nom_team, Tournoi tournoi, Personne client) {
 		super();
 		this.id_team = id_team;
 		this.nom_team = nom_team;
@@ -51,12 +51,12 @@ public class Team {
 	}
 
 
-	public Espace getTournoi() {
+	public Tournoi getTournoi() {
 		return tournoi;
 	}
 
 
-	public void setTournoi(Espace tournoi) {
+	public void setTournoi(Tournoi tournoi) {
 		this.tournoi = tournoi;
 	}
 

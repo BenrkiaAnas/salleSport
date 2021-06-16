@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import entities.Espace;
@@ -43,5 +44,14 @@ public class EspaceRepository extends Repository<Espace>{
 			accessoireRepository.getAllDataEspace(espace);
 		}
 	}
+	
+	public List<Espace> getEspaceTournois(Long id)
+	{
+		
+		return em.createQuery("from "+entityClass.getSimpleName()+ " where id_gerer='"+id+"'").getResultList();
+	}
+	
+	
+	
 
 }

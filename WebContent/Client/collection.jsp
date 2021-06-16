@@ -1386,7 +1386,7 @@ for (var attr in meta) {
           <c:forEach var="item" items="${requestScope.espaces}" >
                                    
 	                                  <li class="link-element first">
-            <a href="collections/womens-cycle-city-1.html" class="link-img">
+            <a href="espace?id_esp=${item['id_esp']}" class="link-img">
               
               <img src="assets/espace.jpg" alt="bmx" />
               
@@ -1394,7 +1394,7 @@ for (var attr in meta) {
             <div class="group_element">            
               <div class="link-mask-content">
                 <div class="inner-mask">
-                  <h2 class="link-title"><a href="collections/womens-cycle-city-1.html">${item['nom_esp']}</a></h2>                            
+                  <h2 class="link-title"><a href="espace?id_esp=${item['id_esp']}">${item['nom_esp']}</a></h2>                            
                 </div><!--/inner mask-->              
               </div>
             </div>

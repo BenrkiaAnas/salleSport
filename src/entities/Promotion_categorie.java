@@ -10,13 +10,13 @@ public class Promotion_categorie {
 	private Long id_promo_cat;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_esp")
-	private Personne espace;
+	private Espace espace;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_cate")
-	private Personne categorie;
+	private Categorie categorie;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_promo")
-	private Personne promotion;
+	private Promotion promotion;
 	
 	
 	public Promotion_categorie() {
@@ -26,7 +26,7 @@ public class Promotion_categorie {
 
 
 
-	public Promotion_categorie(Long id_promo_cat, Personne espace, Personne categorie, Personne promotion) {
+	public Promotion_categorie(Long id_promo_cat, Espace espace, Categorie categorie, Promotion promotion) {
 		super();
 		this.id_promo_cat = id_promo_cat;
 		this.espace = espace;
@@ -51,32 +51,32 @@ public class Promotion_categorie {
 
 
 
-	public Personne getEspace() {
+	public Espace getEspace() {
 		return espace;
 	}
 
 
-	public void setEspace(Personne espace) {
+	public void setEspace(Espace espace) {
 		this.espace = espace;
 	}
 
 
-	public Personne getCategorie() {
+	public Categorie getCategorie() {
 		return categorie;
 	}
 
 
-	public void setCategorie(Personne categorie) {
+	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
 
 
-	public Personne getPromotion() {
+	public Promotion getPromotion() {
 		return promotion;
 	}
 
 
-	public void setPromotion(Personne promotion) {
+	public void setPromotion(Promotion promotion) {
 		this.promotion = promotion;
 	}
 

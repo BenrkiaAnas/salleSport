@@ -41,7 +41,7 @@
                                 <div class="page-title-icon">
                                     <i class="pe-7s-graph text-success"></i>
                                 </div>
-                                <div>Creation du Turnoi
+                                <div>Creation du Tournoi
 
                                 </div>
                             </div>
@@ -69,9 +69,9 @@
                                         </div>    
 
                                         <div class="position-relative row form-group">
-                                            <label for="NomT" class="col-sm-2 col-form-label">Nom Turnoi</label>
+                                            <label for="NomT" class="col-sm-2 col-form-label">Nom Tournoi</label>
                                             <div class="col-sm-10">
-                                                <input name="nom" id="Nomt" placeholder="Nom du Turnoi" type="text" class="form-control">
+                                                <input name="nom" id="Nomt" placeholder="Nom du Tournoi" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="position-relative row form-group">

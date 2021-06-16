@@ -41,7 +41,7 @@
                                     <div class="page-title-icon">
                                         <i class="pe-7s-medal icon-gradient bg-tempting-azure"></i>
                                     </div>
-                                    <div>Liste Turnoi
+                                    <div>Liste Tournois
 
                                     </div>
                                 </div>

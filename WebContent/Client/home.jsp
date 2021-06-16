@@ -15,7 +15,7 @@
   <meta charset="utf-8" />
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
   <title>
-    City Cycle - Responsive Theme
+    4A Sport-Home
   </title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -83,6 +83,8 @@
 
   <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
   <script src="assets/jquery.gmap.minedc2.js" type="text/javascript"></script>
+  
+  
 
   <!-- Facebook Conversion Code for Themes -->
 <script>(function() {
@@ -462,6 +464,13 @@ for (var attr in meta) {
 
 <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
 
+<style>
+.caption-text img 
+{
+width:650px;
+}
+</style>
+
 </head>
 
 <body class="index-template">
@@ -530,58 +539,7 @@ for (var attr in meta) {
               <div class="currencies-switcher">
 
 
-<div class="currency btn-group uppercase">
-  <a class="currency_wrapper dropdown-toggle" data-toggle="dropdown">
-    <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
-    <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
 
-    <span class="currency_code heading hidden-xs">USD</span>
-    <span class="currency_code visible-xs">USD</span>
-    <i class="fa fa-caret-down"></i>
-  </a>
-  <ul class="currencies dropdown-menu text-left">
-
-
-    <li class="currency-USD active">
-      <a href="javascript:;">USD</a>
-      <input type="hidden" value="USD" />
-    </li>
-
-
-    <li class="currency-GBP">
-      <a href="javascript:;">GBP</a>
-      <input type="hidden" value="GBP" />
-    </li>
-
-
-
-
-
-    <li class="currency-EUR">
-      <a href="javascript:;">EUR</a>
-      <input type="hidden" value="EUR" />
-    </li>
-
-
-  </ul>
-
-  <select class="currencies_src hide" name="currencies">
-
-
-    <option value="USD" selected="selected">USD</option>
-
-
-    <option value="GBP">GBP</option>
-
-
-
-
-
-    <option value="EUR">EUR</option>
-
-
-  </select>
-</div>
 
 
 
@@ -611,36 +569,9 @@ for (var attr in meta) {
           <ul class="list-inline list-unstyled text-left hidden-xs">
             <!-- Search Block -->
 
-            <li class="wrapper-search">
-              <div class="header-search">
-                <form class="search" action="https://cs-citycycle.myshopify.com/search">
-                  <input type="hidden" name="type" value="product" />
-                  <input type="text" name="q" class="search_box" placeholder="Search" value=""  />
-                  <input type="image" src="assets/icon-searcha01a.png" alt="Go" id="go">
-                </form>
-              </div>
-            </li>
+            
 
-            <!-- Cart block -->
-            <li id="cart-target" class="toolbar-cart ">
-              <a href="cart.html" class="cart dropdown-toggle dropdown-link" data-toggle="dropdown" title="Shopping Cart">
-                <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
-                <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
-                <div class="num-items-in-cart">
-                  <span class="icon">
-                    <span class="number">0</span>
-                  </span>
-                  <div class="ajax-subtotal" style="display:none;"></div>
-                </div>
-              </a>
-              <div id="cart-info" class="dropdown-menu">
-                <div id="cart-content">
-                  <div class="loading">
-                    <img src="loader66ac.gif" alt="" />
-                  </div>
-                </div>
-              </div>
-            </li>
+         
           </ul>
           <div class="mobile-top-navigation visible-xs">
             <button id="showLeftPush" class="visible-xs"><i class="fa fa-bars fa-2x"></i></button>
@@ -750,7 +681,7 @@ for (var attr in meta) {
 
 <li class="nav-item active">
   <a href="index.html">
-    <span>Home</span>
+    <span>Acceuil</span>
   </a>
 </li>
 
@@ -769,7 +700,7 @@ for (var attr in meta) {
     <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
   </a>
   <ul class="dropdown-menu">
-    <li class="list-title">cycles </li>
+    <li class="list-title">Espace </li>
 
 
 
@@ -1047,8 +978,8 @@ for (var attr in meta) {
 
 
 <li class="nav-item active">
-  <a href="index.html">
-    <span>Home</span>
+  <a href="/salleSport/home">
+    <span>Acceuil</span>
   </a>
 </li>
 
@@ -1060,116 +991,20 @@ for (var attr in meta) {
 
 
 <li class="nav-item dropdown navigation">
-  <a href="collections.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
-    <span>cycles </span>
+  <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+    <span>Espaces </span>
     <i class="fa fa-angle-down"></i>
     <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
     <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
   </a>
   <ul class="dropdown-menu">
-    <li class="list-title">cycles </li>
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="collections/shoes.html">road</a>
+  <c:forEach var="item" items="${requestScope.espaces}" >
+   <li class="li-sub-mega">
+  <a tabindex="-1" href="/salleSport/espace?id_esp=${item['id_esp'] }">${item['nom_esp'] }</a>
 </li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="collections/womens-cycle-city-1.html">bmx</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="collections/bags.html">mountain</a>
-</li>
-
-
-
-
-
-<li class=" dropdown li-sub-mega">
-  <a href="javascript:void(0)">
-    <span>city</span>
-    <i class="fa fa-angle-down"></i>
-    <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
-    <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
-  </a>
-  <ul class="dropdown-menu">
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="products/curabitur-cursus-dignis.html">Khakis</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="products/donec-aliquam-ante-non.html">Shorts</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="products/donec-condime-fermentum.html">Sleep & Lounge</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="products/gravida-est-quis-euismod.html">Underwear & Socks</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="products/malesuada-fames-ac-ante-1.html">Cords</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="products/praesent-placerat-rutrum.html">Sale off</a>
-</li>
-
-
-
-  </ul>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="collections/bestsellers.html">youth</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="collections/womens-cycle-city.html">dirt/street</a>
-</li>
+                                     
+									</c:forEach>
+   
 
 
 
@@ -1182,119 +1017,20 @@ for (var attr in meta) {
 
 
 <li class="dropdown mega-menu">
-  <a href="collections/all.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
-    <span>Support</span>
-    <i class="fa fa-angle-down"></i>
+  <a href="/salleSport/tournoi" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+    <span>Tournois</span>  
     <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
     <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
   </a>
 
 
-  <div class="megamenu-container col-5 megamenu-container-1 dropdown-menu">
-    <ul class="sub-mega-menu">
-
-      <li>
-
-        <ul>
-          <li class="list-title">Collections</li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="collections/shoes.html">road</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="collections/womens-cycle-city-1.html">bmx</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="collections/bags.html">mountain</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="collections/sweaters.html">city</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="collections/bestsellers.html">youth</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="collections/womens-cycle-city.html">dirt/street</a>
-          </li>
-
-        </ul>
-      </li>
-
-
-      <li>
-
-        <ul>
-          <li class="list-title">Pages</li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="products/donec-aliquam-ante-non.html">Product Details</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="cart.html">Shopping Cart</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="cart.html">Checkout</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="account/login.html">Login/Register</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="account/login4236.html">My Account</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="pages/faqs.html">FAQ&#39;s</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="pages/testimonial.html">Testimonial</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="city_cycle.html">404 Not Found</a>
-          </li>
-
-        </ul>
-      </li>
-
-
-    </ul>
-  </div>
+  
 
 </li>
-
-
-
-
-
-
-
-
-<li class="nav-item">
-  <a href="blogs/news.html">
-    <span>Blog</span>
-  </a>
-</li>
-
-
-
-
-
-
-
 
 <li class="nav-item">
   <a href="pages/about-us.html">
-    <span>About</span>
+    <span>A Propos</span>
   </a>
 </li>
 
@@ -1307,22 +1043,10 @@ for (var attr in meta) {
 
 <li class="nav-item">
   <a href="pages/contact-us.html">
-    <span>Contact</span>
+    <span>Contactez-Nous</span>
   </a>
 </li>
 
-
-
-
-
-
-
-
-<li class="nav-item">
-  <a href="pages/faqs.html">
-    <span>FAQ’s</span>
-  </a>
-</li>
 
 
 
@@ -1374,6 +1098,7 @@ for (var attr in meta) {
   <div class="home-slideshow-inner">
     <div class="home-slideshow" style="opacity:0">
       <ul class="slides">
+      
 
 
 
@@ -1383,9 +1108,9 @@ for (var attr in meta) {
 
         <li>
           <a href="collections/coats-jackets.html">
-            <img src="assets/tennis.jpg" alt="slide-image-1.jpg" />
+            <img src="assets/tennis.jpg" alt="football_back.jpg" />
           </a>
-          <div class="caption-text caption-image-1" data-jemiz-animate="swing" data-jemiz-text="assets/slide-caption-11ae0.png" ></div>
+          <div class="caption-text caption-image-1" data-jemiz-animate="swing" data-jemiz-text="assets/football_back.png" style="" ></div>
         </li>
 
 
@@ -1397,9 +1122,9 @@ for (var attr in meta) {
 
         <li>
           <a href="collections/t-shirts-shirts.html">
-            <img src="assets/football.jpg" alt="slide-image-2.jpg" />
+            <img src="assets/football.jpg" alt="football_back.jpg" />
           </a>
-          <div class="caption-text caption-image-2" data-jemiz-animate="pulse" data-jemiz-text="assets/slide-caption-21ae0.png" ></div>
+          <div class="caption-text caption-image-2" data-jemiz-animate="pulse" data-jemiz-text="assets/football_back.png" ></div>
         </li>
 
 
@@ -1972,6 +1697,10 @@ for (var attr in meta) {
 
 <!-- Video Block -->
 
+
+<!-- 
+
+
 <div class="group-content-center" id="video-block">
   <div class="container">
     <div class="row">
@@ -1991,8 +1720,8 @@ for (var attr in meta) {
               <div class="right-block">
                 <iframe src="https://player.vimeo.com/video/109179910" width="831" height="472" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
-            </div><!--End group_video-->
-          </div><!--End video element-->
+            </div>
+          </div><
 
 
 
@@ -2008,8 +1737,8 @@ for (var attr in meta) {
               <div class="right-block">
                 <iframe src="https://player.vimeo.com/video/67474409" width="831" height="472" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
-            </div><!--End group_video-->
-          </div><!--End video element-->
+            </div>
+          </div>
 
 
 
@@ -2025,8 +1754,8 @@ for (var attr in meta) {
               <div class="right-block">
                 <iframe src="https://player.vimeo.com/video/93542506" width="831" height="472" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
-            </div><!--End group_video-->
-          </div><!--End video element-->
+            </div>
+          </div>
 
 
         </div>
@@ -2035,7 +1764,7 @@ for (var attr in meta) {
   </div>
 </div>
 
-
+ -->
 <!-- Men Cycle city -->
 
 
@@ -2052,15 +1781,15 @@ for (var attr in meta) {
 
 
 
-<div class="group-content-center" id="newsletter">
+<div class="group-content-center" id="newsletter" style="background-image: url('assets/foot_bzll.jpg'); !important">
   <div class="container">
     <div class="row">
       <div class="newsletter-group">
         <div class="newsletter-inner">
           <form action="https://codespot.us5.list-manage.com/subscribe/post?u=ed73bc2d2f8ae97778246702e&amp;id=c63b4d644d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
             <div class="newsletter-content">
-              <h3 class="newsletter-title">Newsletter</h3>
-              <div class="newsletter-desc">Subscribe to receive our news everyday!</div>
+              <h3 class="newsletter-title" style="color: #000">Newsletter</h3>
+              <div class="newsletter-desc" style="color: #000">Subscribe to receive our news everyday!</div>
               <div class="newsletter-input">
                 <input class="form-control" type="email" placeholder="Enter your email address" name="EMAIL" id="email-input" />
                 <button class="btn btn-1" type="submit">Subscribe</button>
@@ -2169,7 +1898,7 @@ for (var attr in meta) {
         <div class="nav-logo">
           <div class="logo">
 
-            <h1><a href="index.html"><img src="logo-footer49fd.png" alt="City Cycle - Responsive Theme" /></a></h1>
+            <h1><a href="index.html"><img src="assets/football_back.png" alt="City Cycle - Responsive Theme" /></a></h1>
 
             <h1 style="display:none"><a href="index.html">City Cycle - Responsive Theme</a></h1>
 
@@ -2179,15 +1908,15 @@ for (var attr in meta) {
         <ul>
           <li class="address">
               <i class="fa fa-map-marker"></i>
-            249 Ung Van Khiem Street, Binh Thanh Dist, HCM city
+            Medina Marrakech, Maroc
           </li>
           <li class="phone">
               <i class="fa fa-phone"></i>
-            +001123456xxx
+            +212611223364
           </li>
           <li class="email">
               <i class="fa fa-envelope"></i>
-            Email: support@gmail.com
+            Email: support@4asport.com
           </li>
         </ul>
       </div>
@@ -2200,7 +1929,7 @@ for (var attr in meta) {
 <div id="footer-bottom">
   <div class="container">
     <div class="fb-top">
-      <p>&copy; 2021 City Cycle - Responsive Theme. All rights Reserved</p>
+      <p>&copy; 2021 4A SPORT - Responsive Theme. All rights Reserved</p>
     </div>
     <div class="fb-bottom">
 

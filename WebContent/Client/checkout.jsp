@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
     <meta name="referrer" content="origin">
 
-    <title>    Information - City Cycle - Responsive Theme - Checkout</title>
+    <title>  Reservation Terrain  </title>
 
       <meta data-browser="chrome" data-browser-major="91">
 <meta data-body-font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif, &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;" data-body-font-type="system">
@@ -273,6 +273,20 @@ window.additionalScripts = function () {
         <input placeholder="Email" autocomplete="shipping organization" autocorrect="off" data-backup="company" value="${requestScope.personne['email']}" class="field__input" size="30" type="text" name="email" id="checkout_shipping_address_company" />
       </div>
 </div>
+
+<div data-address-field="company" data-autocomplete-field-container="true" class="field field--optional">
+      <label class="field__label" for="checkout_shipping_address_company">Planning</label>
+      <div class="field__input-wrapper">
+        <input placeholder="Email" autocomplete="shipping organization" autocorrect="off" data-backup="company" value="${requestScope.planning['date']}" class="field__input" size="30" type="text" name="email" id="checkout_shipping_address_company" />
+      </div>
+</div>
+
+<div data-address-field="company" data-autocomplete-field-container="true" class="field field--optional">
+      <label class="field__label" for="checkout_shipping_address_company">Horraire</label>
+      <div class="field__input-wrapper">
+        <input placeholder="Email" autocomplete="shipping organization" autocorrect="off" data-backup="company" value="${requestScope.horraire['heure_depart']} - ${requestScope.horraire['heure_fin']}" class="field__input" size="30" type="text" name="email" id="checkout_shipping_address_company" />
+      </div>
+</div>
      
 </div>
 
@@ -412,7 +426,7 @@ window.additionalScripts = function () {
   <th class="total-line__name" scope="row">Total</th>
   <td class="total-line__price">
     <span class="order-summary__emphasis skeleton-while-loading" data-checkout-subtotal-price-target="20000">
-      ${requestScope.prix_total} DHS
+      ${requestScope.prix_total_before_disc} DHS
     </span>
   </td>
 </tr>
@@ -427,7 +441,7 @@ window.additionalScripts = function () {
   </th>
   <td class="total-line__price">
     <span class="skeleton-while-loading order-summary__small-text" data-checkout-total-shipping-target="0">
-      0 DHS
+      ${requestScope.prix_disc} DHS
     </span>
   </td>
 </tr>

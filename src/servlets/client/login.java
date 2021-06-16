@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.EspaceRepository;
 import dao.PersonneRepository;
+import entities.Espace;
 import entities.Personne;
 
 /**
@@ -34,11 +36,20 @@ public class login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Long id = Long.parseLong(request.getParameter("terrain"));
+		Long id_planning = Long.parseLong(request.getParameter("planning"));
+		Long id_horraire = Long.parseLong(request.getParameter("horraire"));
 		Long values = Long.parseLong(request.getParameter("accesoires[]"));
 		System.out.println(values);
 		HttpSession session = request.getSession();
+		
+		EspaceRepository espaceRepository = new EspaceRepository();
+		List<Espace> espaces = espaceRepository.findAll();
+		request.setAttribute("espaces", espaces);
+		
 		session.setAttribute("id_terrain", id);
 		session.setAttribute("id_accessoires", values);
+		session.setAttribute("id_planning", id_planning);
+		session.setAttribute("id_horraire", id_horraire);
 		request.getRequestDispatcher("Client/login.jsp").forward(request, response);
 	}
 

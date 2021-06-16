@@ -15,7 +15,7 @@
   <meta charset="utf-8" />
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
   <title>
-    Gravida est quis euismod &ndash; City Cycle - Responsive Theme
+    Terrain
   </title>
 
   <meta name="description" content="Derailleur N/AXO 1 DH 7 speed Crankset SRAM X01 DH carbon CR Bottom Bracket BB PF MTB 107 Chain Tensioner E-13 LG Chain Sram PC X1 Pedals N/A Chain Tensioner E-13 LG Cpd CS HG795 Derailleur N/A" />
@@ -535,34 +535,35 @@ for (var attr in meta) {
                 <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
                 <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
                 <i class="fa fa-unlock-alt"></i>
-                <a href="../account/login.html" id="customer_login_link">Log in</a>
+                <a href="account/login.html" id="customer_login_link">Log in</a>
               </span>
               <!-- Customer Account Login -->
               <div id="loginBox" class="dropdown-menu text-left">
-                <form method="post" action="https://cs-citycycle.myshopify.com/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" />
+                <form method="post" action="" id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" />
                 <div id="bodyBox">
                   <ul class="control-container customer-accounts list-unstyled">
                     <li class="clearfix">
-                      <label for="customer_email_box" class="control-label">Email Address <span class="req">*</span></label>
-                      <input type="email" value="" name="customer[email]" id="customer_email_box" class="form-control" />
+                      <label for="customer_email_box" class="control-label">Email<span class="req">*</span></label>
+                      <input type="email" value="" name="email" id="customer_email_box" class="form-control" />
                     </li>
 
                     <li class="clearfix">
-                      <label for="customer_password_box" class="control-label">Password <span class="req">*</span></label>
-                      <input type="password" value="" name="customer[password]" id="customer_password_box" class="form-control password" />
+                      <label for="customer_password_box" class="control-label">Mot de Passe <span class="req">*</span></label>
+                      <input type="password" value="" name="pwd" id="customer_password_box" class="form-control password" />
                     </li>
 
                     <li class="clearfix">
                       <span class="required field">*required field</span>
                     </li>
-                    <li class="clearfix">
-                      <a href="../account/login.html#recover"><span class="red">?</span> Forgot your password</a>
+                    <!--    <li class="clearfix">
+                      <a href="account/login.html#recover"><span class="red">?</span> Forgot your password</a>
                     </li>
+                    -->
                     <li class="clearfix">
                       <button class="btn btn-1" type="submit">Login</button>
                     </li>
                     <li class="clearfix">
-                      <a class="action btn btn-3" href="../account/register.html">Create an account</a>
+                      <a class="action btn btn-3" href="salleSport/registerClient">Crée Compte</a>
                     </li>
                   </ul>
                 </div>
@@ -578,58 +579,7 @@ for (var attr in meta) {
               <div class="currencies-switcher">
 
 
-<div class="currency btn-group uppercase">
-  <a class="currency_wrapper dropdown-toggle" data-toggle="dropdown">
-    <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
-    <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
 
-    <span class="currency_code heading hidden-xs">USD</span>
-    <span class="currency_code visible-xs">USD</span>
-    <i class="fa fa-caret-down"></i>
-  </a>
-  <ul class="currencies dropdown-menu text-left">
-
-
-    <li class="currency-USD active">
-      <a href="javascript:;">USD</a>
-      <input type="hidden" value="USD" />
-    </li>
-
-
-    <li class="currency-GBP">
-      <a href="javascript:;">GBP</a>
-      <input type="hidden" value="GBP" />
-    </li>
-
-
-
-
-
-    <li class="currency-EUR">
-      <a href="javascript:;">EUR</a>
-      <input type="hidden" value="EUR" />
-    </li>
-
-
-  </ul>
-
-  <select class="currencies_src hide" name="currencies">
-
-
-    <option value="USD" selected="selected">USD</option>
-
-
-    <option value="GBP">GBP</option>
-
-
-
-
-
-    <option value="EUR">EUR</option>
-
-
-  </select>
-</div>
 
 
 
@@ -657,36 +607,8 @@ for (var attr in meta) {
           <ul class="list-inline list-unstyled text-left hidden-xs">
             <!-- Search Block -->
 
-            <li class="wrapper-search">
-              <div class="header-search">
-                <form class="search" action="https://cs-citycycle.myshopify.com/search">
-                  <input type="hidden" name="type" value="product" />
-                  <input type="text" name="q" class="search_box" placeholder="Search" value=""  />
-                  <input type="image" src="assets/icon-searcha01a.png" alt="Go" id="go">
-                </form>
-              </div>
-            </li>
-
-            <!-- Cart block -->
-            <li id="cart-target" class="toolbar-cart ">
-              <a href="../cart.html" class="cart dropdown-toggle dropdown-link" data-toggle="dropdown" title="Shopping Cart">
-                <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
-                <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
-                <div class="num-items-in-cart">
-                  <span class="icon">
-                    <span class="number">0</span>
-                  </span>
-                  <div class="ajax-subtotal" style="display:none;"></div>
-                </div>
-              </a>
-              <div id="cart-info" class="dropdown-menu">
-                <div id="cart-content">
-                  <div class="loading">
-                    <img src="loader66ac.gif?v=14707198212673870447" alt="" />
-                  </div>
-                </div>
-              </div>
-            </li>
+            
+            
           </ul>
           <div class="mobile-top-navigation visible-xs">
             <button id="showLeftPush" class="visible-xs"><i class="fa fa-bars fa-2x"></i></button>
@@ -796,7 +718,7 @@ for (var attr in meta) {
 
 <li class="nav-item">
   <a href="../index.html">
-    <span>Home</span>
+    <span>Acceuil</span>
   </a>
 </li>
 
@@ -1080,121 +1002,47 @@ for (var attr in meta) {
       </div><!--end group top header-->
     </div><!--end container-->
   </header>
+  
   <nav id="navigation" class="fadeInDown clearfix">
     <div class="container">
       <div class="menu-area hidden-xs">
         <div class="nav-menu collapse navbar-collapse hidden-xs ">
           <nav class="main">
             <ul class="nav navbar-nav hoverMenuWrapper hidden-xs">
-
-
+              
+              
 
 
 
 
 <li class="nav-item">
-  <a href="../index.html">
-    <span>Home</span>
+  <a href="/salleSport/home">
+    <span>Acceuil</span>
   </a>
 </li>
 
 
-
-
+              
+              
 
 
 
 
 <li class="nav-item dropdown navigation">
-  <a href="../collections.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
-    <span>cycles </span>
+  <a href="#" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+    <span>Espaces </span>
     <i class="fa fa-angle-down"></i>
     <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
     <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
   </a>
   <ul class="dropdown-menu">
-    <li class="list-title">cycles </li>
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="../collections/shoes.html">road</a>
+  <c:forEach var="item" items="${requestScope.espaces}" >
+   <li class="li-sub-mega">
+  <a tabindex="-1" href="/salleSport/espace?id_esp=${item['id_esp'] }">${item['nom_esp'] }</a>
 </li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="../collections/womens-cycle-city-1.html">bmx</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="../collections/bags.html">mountain</a>
-</li>
-
-
-
-
-
-<li class=" dropdown li-sub-mega">
-  <a href="javascript:void(0)">
-    <span>city</span>
-    <i class="fa fa-angle-down"></i>
-    <i class="sub-dropdown1  visible-sm visible-md visible-lg"></i>
-    <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
-  </a>
-  <ul class="dropdown-menu">
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="curabitur-cursus-dignis.html">Khakis</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="donec-aliquam-ante-non.html">Shorts</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="donec-condime-fermentum.html">Sleep & Lounge</a>
-</li>
-
-
-
-
-
-<li class="active li-sub-mega">
-  <a tabindex="-1" href="gravida-est-quis-euismod.html">Underwear & Socks</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="malesuada-fames-ac-ante-1.html">Cords</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="praesent-placerat-rutrum.html">Sale off</a>
-</li>
+                                     
+									</c:forEach>
+   
 
 
 
@@ -1202,132 +1050,23 @@ for (var attr in meta) {
 </li>
 
 
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="../collections/bestsellers.html">youth</a>
-</li>
-
-
-
-
-
-<li class="li-sub-mega">
-  <a tabindex="-1" href="../collections/womens-cycle-city.html">dirt/street</a>
-</li>
-
-
-
-  </ul>
-</li>
-
-
-
-
-
-
+              
+              
 <li class="dropdown mega-menu">
-  <a href="../collections/all.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
-    <span>Support</span>
-    <i class="fa fa-angle-down"></i>
+  <a href="/salleSport/tournoi" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+    <span>Tournois</span>  
     <i class="sub-dropdown1 visible-sm visible-md visible-lg"></i>
     <i class="sub-dropdown visible-sm visible-md visible-lg"></i>
   </a>
 
 
-  <div class="megamenu-container col-5 megamenu-container-1 dropdown-menu">
-    <ul class="sub-mega-menu">
-
-      <li>
-
-        <ul>
-          <li class="list-title">Collections</li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../collections/shoes.html">road</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../collections/womens-cycle-city-1.html">bmx</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../collections/bags.html">mountain</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../collections/sweaters.html">city</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../collections/bestsellers.html">youth</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../collections/womens-cycle-city.html">dirt/street</a>
-          </li>
-
-        </ul>
-      </li>
-
-
-      <li>
-
-        <ul>
-          <li class="list-title">Pages</li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="donec-aliquam-ante-non.html">Product Details</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../cart.html">Shopping Cart</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../cart.html">Checkout</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../account/login.html">Login/Register</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../account/login4236.html">My Account</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../pages/faqs.html">FAQ&#39;s</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../pages/testimonial.html">Testimonial</a>
-          </li>
-
-          <li class="list-unstyled li-sub-mega">
-            <a href="../city_cycle.html">404 Not Found</a>
-          </li>
-
-        </ul>
-      </li>
-
-
-    </ul>
-  </div>
+  
 
 </li>
 
-
-
-
-
-
-
-
 <li class="nav-item">
-  <a href="../blogs/news.html">
-    <span>Blog</span>
+  <a href="pages/about-us.html">
+    <span>A Propos</span>
   </a>
 </li>
 
@@ -1339,45 +1078,23 @@ for (var attr in meta) {
 
 
 <li class="nav-item">
-  <a href="../pages/about-us.html">
-    <span>About</span>
+  <a href="pages/contact-us.html">
+    <span>Contactez-Nous</span>
   </a>
 </li>
 
 
 
 
-
-
-
-
-<li class="nav-item">
-  <a href="../pages/contact-us.html">
-    <span>Contact</span>
-  </a>
-</li>
-
-
-
-
-
-
-
-
-<li class="nav-item">
-  <a href="../pages/faqs.html">
-    <span>FAQ’s</span>
-  </a>
-</li>
-
-
-
-            </ul>
+              
+            </ul> 
           </nav>
         </div>
-      </div>
+      </div>   
     </div>
-  </nav>
+  </nav> 
+  
+  
 </div><!--end group header-->
 
 
@@ -1530,7 +1247,7 @@ for (var attr in meta) {
 
 
 
-<div class="swatch clearfix" data-option-index="1">
+<div class="swatch clearfix" data-option-index="1" style="margin-bottom: 5px">
   <div class="header">Accesoires</div>
 
   <div  class="swatch-element m available" style="width: 250px; margin-left: 30px" >
@@ -1604,13 +1321,48 @@ for (var attr in meta) {
 
 
 
-              <div id="purchase-991015684">
+
+
+            
+              
+              <form method="get" action="/salleSport/loginClient" id="form_reserv">
+              
+              <div class="swatch clearfix" data-option-index="1" style="margin-top: 5px !important">
+  <div class="header" style="margin-top: 10px">Planning</div>
+
+  <div  class="swatch-element m available" style="width: 250px; margin-left: 30px";margin-top: 10px" >
+     <select class="mb-2 form-control" name="planning">
+                                                 <c:forEach var="item" items="${requestScope.plannings}" >
+														   <option value="${item['id_plann'] }">${item['date']}</option>
+													</c:forEach>
+                                            </select>
+
+  </div>
+
+
+</div>
+
+<div class="swatch clearfix" data-option-index="1">
+  <div class="header">Horraire</div>
+
+  <div  class="swatch-element m available" style="width: 250px; margin-left: 30px" >
+     <select class="mb-2 form-control" name="horraire">
+                                                 <c:forEach var="item" items="${requestScope.horraires}" >
+														   <option value="${item['id_hor'] }">${item['heure_depart']} - ${item['heure_fin']}</option>
+													</c:forEach>
+                                            </select>
+
+  </div>
+
+
+</div>
+
+  <div id="purchase-991015684">
                 <div class="detail-price" itemprop="price" style="font-size: 40px">
                   <span id="prix-total">${requestScope.terrain['prix']}</span> DH
                 </div>
               </div>
               
-              <form method="get" action="/salleSport/loginClient" id="form_reserv">
               
               <input type="hidden" name="terrain" id="terrain" value="${requestScope.terrain['id_ter']}" />
                
@@ -1836,7 +1588,8 @@ Dry the surface immediately with a clean, soft towel.</p></div>
       </div>
     </div>
     <!-- Footer -->
-    <footer id="footer-wrapper">
+     <footer id="footer-wrapper">
+
 
 
 
@@ -1849,23 +1602,23 @@ Dry the surface immediately with a clean, soft towel.</p></div>
       <ul>
 
         <li>
-          <a href="../pages/about-us.html" class=""><span>About Us</span></a>
+          <a href="pages/about-us.html" class=""><span>About Us</span></a>
         </li>
 
         <li>
-          <a href="../pages/about-us.html" class=""><span>Shopping Guide</span></a>
+          <a href="pages/about-us.html" class=""><span>Shopping Guide</span></a>
         </li>
 
         <li>
-          <a href="../pages/about-us.html" class=""><span>Delivery Information</span></a>
+          <a href="pages/about-us.html" class=""><span>Delivery Information</span></a>
         </li>
 
         <li>
-          <a href="../pages/about-us.html" class=""><span>Privacy Policy</span></a>
+          <a href="pages/about-us.html" class=""><span>Privacy Policy</span></a>
         </li>
 
         <li>
-          <a href="../pages/about-us.html" class=""><span>Sitemap</span></a>
+          <a href="pages/about-us.html" class=""><span>Sitemap</span></a>
         </li>
 
       </ul>
@@ -1875,23 +1628,23 @@ Dry the surface immediately with a clean, soft towel.</p></div>
       <ul>
 
         <li>
-          <a href="../index.html" class=""><span>My Account</span></a>
+          <a href="index.html" class=" current"><span>My Account</span></a>
         </li>
 
         <li>
-          <a href="../index.html" class=""><span>Order History</span></a>
+          <a href="index.html" class=" current"><span>Order History</span></a>
         </li>
 
         <li>
-          <a href="../index.html" class=""><span>Wish List</span></a>
+          <a href="index.html" class=" current"><span>Wish List</span></a>
         </li>
 
         <li>
-          <a href="../index.html" class=""><span>Newsletter</span></a>
+          <a href="index.html" class=" current"><span>Newsletter</span></a>
         </li>
 
         <li>
-          <a href="../index.html" class=""><span>Contact us</span></a>
+          <a href="index.html" class=" current"><span>Contact us</span></a>
         </li>
 
       </ul>
@@ -1901,19 +1654,19 @@ Dry the surface immediately with a clean, soft towel.</p></div>
       <ul>
 
         <li>
-          <a href="../collections/womens-cycle-city-1.html" class=""><span>New Arrival</span></a>
+          <a href="collections/womens-cycle-city-1.html" class=""><span>New Arrival</span></a>
         </li>
 
         <li>
-          <a href="../collections/sweaters.html" class=""><span>Best Seller</span></a>
+          <a href="collections/sweaters.html" class=""><span>Best Seller</span></a>
         </li>
 
         <li>
-          <a href="../collections/womens-cycle-city.html" class=""><span>This week's ourfits</span></a>
+          <a href="collections/womens-cycle-city.html" class=""><span>This week's ourfits</span></a>
         </li>
 
         <li>
-          <a href="../collections/bags.html" class=""><span>Sale off</span></a>
+          <a href="collections/bags.html" class=""><span>Sale off</span></a>
         </li>
 
       </ul>
@@ -1923,7 +1676,9 @@ Dry the surface immediately with a clean, soft towel.</p></div>
         <div class="nav-logo">
           <div class="logo">
 
-            <h1><a href="../index.html"><img src="assets/logo-footer49fd.png" alt="City Cycle - Responsive Theme" /></a></h1>
+            <h1><a href="index.html"><img src="assets/football_back.png" alt="City Cycle - Responsive Theme" /></a></h1>
+
+            <h1 style="display:none"><a href="index.html">City Cycle - Responsive Theme</a></h1>
 
 
           </div>
@@ -1931,15 +1686,15 @@ Dry the surface immediately with a clean, soft towel.</p></div>
         <ul>
           <li class="address">
               <i class="fa fa-map-marker"></i>
-            249 Ung Van Khiem Street, Binh Thanh Dist, HCM city
+            Medina Marrakech, Maroc
           </li>
           <li class="phone">
               <i class="fa fa-phone"></i>
-            +001123456xxx
+            +212611223364
           </li>
           <li class="email">
               <i class="fa fa-envelope"></i>
-            Email: support@gmail.com
+            Email: support@4asport.com
           </li>
         </ul>
       </div>
@@ -1952,7 +1707,7 @@ Dry the surface immediately with a clean, soft towel.</p></div>
 <div id="footer-bottom">
   <div class="container">
     <div class="fb-top">
-      <p>&copy; 2021 City Cycle - Responsive Theme. All rights Reserved</p>
+      <p>&copy; 2021 4A SPORT - Responsive Theme. All rights Reserved</p>
     </div>
     <div class="fb-bottom">
 

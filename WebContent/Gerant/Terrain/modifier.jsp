@@ -52,7 +52,16 @@
                                 <div class="card-body">
 
                                     <form class="" enctype="multipart/form-data" method="POST" action="">
-                                    
+                                    <div class="position-relative row form-group">
+                                            <label for="categorie" class="col-sm-2 col-form-label">Categorie</label>
+                                            <div class="col-sm-10">
+                                                 <select class="mb-2 form-control" name="categorie">
+                                                 <c:forEach var="item" items="${requestScope.categorie}" >
+														   <option value="${item['id_cate'] }">${item['nom_cate']}</option>
+													</c:forEach>
+                                            </select>
+                                            </div>
+                                        </div>
                                         <div class="position-relative row form-group">
                                             <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
                                             <div class="col-sm-10">

@@ -12,12 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.AccessoireRepository;
+import dao.HorraireRepository;
 import dao.PersonneRepository;
+import dao.PlanningRepository;
+import dao.Promotion_categorieRepository;
 import dao.ReservationRepository;
 import dao.TerrainRepository;
 import entities.Accessoire;
 import entities.Horraire;
 import entities.Personne;
+import entities.Planning;
+import entities.Promotion_categorie;
 import entities.Reservation;
 import entities.Terrain;
 
@@ -41,9 +46,16 @@ public class checkout extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Double prix_disc = 0d;
+		
 		HttpSession session = request.getSession();
 		Long id_ter = (Long) session.getAttribute("id_terrain");
 		Long id_access = (Long) session.getAttribute("id_accessoires");
+		Long id_planning = (Long) session.getAttribute("id_planning");
+		Long id_horraire = (Long) session.getAttribute("id_horraire");
+		
+		
+		
 		TerrainRepository terrainRepository = new TerrainRepository();
 		System.out.println(id_ter);
 		Terrain terrain = terrainRepository.find(id_ter);
@@ -55,9 +67,27 @@ public class checkout extends HttpServlet {
 		request.setAttribute("accessoire", accessoire);
 		Personne personne =   (Personne) session.getAttribute("personne");
 		request.setAttribute("personne", personne);
-		Double prix_total = terrain.getPrix() + accessoire.getPrix_acc();
 		
+		PlanningRepository planningRepository = new PlanningRepository();
+		Planning planning = planningRepository.find(id_planning);
+		
+		HorraireRepository horraireRepository = new HorraireRepository();
+		Horraire horraire = horraireRepository.find(id_horraire);
+		
+		request.setAttribute("planning", planning);
+		request.setAttribute("horraire", horraire);
+		
+		Promotion_categorieRepository promotion_categorieRepository = new Promotion_categorieRepository();
+		Promotion_categorie promotion_categorie = promotion_categorieRepository.findPromotionCategorieByTerrain(terrain.getEspace(), terrain.getCategorie());
+		
+		if(promotion_categorie != null) {
+			prix_disc = promotion_categorie.getPromotion().getDiscount();
+		}
+		Double prix_total = terrain.getPrix() + accessoire.getPrix_acc() - prix_disc;
+		Double prix_total_before_disc = terrain.getPrix() + accessoire.getPrix_acc();
 		request.setAttribute("prix_total", prix_total);
+		request.setAttribute("prix_disc", prix_disc);
+		request.setAttribute("prix_total_before_disc", prix_total_before_disc);
 		request.getRequestDispatcher("Client/checkout.jsp").forward(request, response);
 	}
 
@@ -69,6 +99,9 @@ public class checkout extends HttpServlet {
 		HttpSession session = request.getSession();
 		Long id_ter = (Long) session.getAttribute("id_terrain");
 		Long id_access = (Long) session.getAttribute("id_accessoires");
+		Long id_planning = (Long) session.getAttribute("id_planning");
+		Long id_horraire = (Long) session.getAttribute("id_horraire");
+		
 		
 		TerrainRepository terrainRepository = new TerrainRepository();
 		Terrain terrain = terrainRepository.find(id_ter);
@@ -87,7 +120,9 @@ public class checkout extends HttpServlet {
 		List<Accessoire> accessoires = new ArrayList<Accessoire>();
 		accessoires.add(accessoire);
 		
-		Horraire horraire = new Horraire();
+		HorraireRepository horraireRepository = new HorraireRepository();
+		
+		Horraire horraire = horraireRepository.find(id_horraire);
 		
 
 		Reservation reservation = new Reservation(null, horraire, client, accessoires);

@@ -5,6 +5,7 @@ import java.util.List;
 
 import entities.Accessoire;
 import entities.Espace;
+import entities.Personne;
 import entities.Terrain;
 
 public class AccessoireRepository extends Repository<Accessoire>{
@@ -43,6 +44,12 @@ public class AccessoireRepository extends Repository<Accessoire>{
 	{
 		List<Accessoire> accessoire =  em.createQuery("from "+entityClass.getSimpleName()+ " where id_cate='"+terrain.getCategorie().getId_cate()+"' and id_gerant = '"+terrain.getEspace().getGerer().getId_personne()+"'").getResultList();
 		terrain.setAccessoires(accessoire);
+	}
+	
+	public List<Accessoire> getAccessoireByGerant(Personne gerant)
+	{
+		return  em.createQuery("from "+entityClass.getSimpleName()+ " where  id_gerant = '"+gerant.getId_personne()+"'").getResultList();
+		
 	}
 
 }

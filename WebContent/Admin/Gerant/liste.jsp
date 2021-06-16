@@ -40,7 +40,7 @@
                                     <div class="page-title-icon">
                                         <i class="pe-7s-medal icon-gradient bg-tempting-azure"></i>
                                     </div>
-                                    <div>Liste Catégories
+                                    <div>Liste Gérants
 
                                     </div>
                                 </div>

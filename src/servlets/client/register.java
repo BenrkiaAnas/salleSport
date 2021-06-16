@@ -1,13 +1,18 @@
 package servlets.client;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import dao.EspaceRepository;
 import dao.PersonneRepository;
+import entities.Espace;
 import entities.Personne;
 
 /**
@@ -30,7 +35,9 @@ public class register extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		EspaceRepository espaceRepository = new EspaceRepository();
+		List<Espace> espaces = espaceRepository.findAll();
+		request.setAttribute("espaces", espaces);
 		request.getRequestDispatcher("Client/register.jsp").forward(request, response);
 	}
 
@@ -46,7 +53,9 @@ public class register extends HttpServlet {
 		PersonneRepository personneRepository = new PersonneRepository();
 		Personne personne = new Personne(null, nom, prenom, email, pwd, 3l, 1l);
 		personneRepository.create(personne);
-		response.sendRedirect(request.getContextPath() + "/home");
+		HttpSession session = request.getSession();
+		session.setAttribute("personne", personne);
+		response.sendRedirect(request.getContextPath() + "/checkout");
 	}
 
 }

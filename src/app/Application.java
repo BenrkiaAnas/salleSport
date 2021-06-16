@@ -6,14 +6,21 @@ import dao.AbonnementRepository;
 import dao.AccessoireRepository;
 import dao.CategorieRepository;
 import dao.EspaceRepository;
+import dao.HorraireRepository;
 import dao.PersonneRepository;
+import dao.PlanningRepository;
 import dao.PromotionRepository;
+import dao.Promotion_categorieRepository;
+import dao.TeamRepository;
 import dao.TournoiRepository;
 import dao.Type_abonnementRepository;
 import entities.Abonnement;
 import entities.Accessoire;
 import entities.Espace;
+import entities.Horraire;
 import entities.Personne;
+import entities.Planning;
+import entities.Promotion_categorie;
 import entities.Terrain;
 import entities.Tournoi;
 import entities.Type_abonnement;
@@ -46,31 +53,10 @@ public class Application {
 		personneRepository.delete(personneDelete);*/
 
 		//CategorieRepository categorieRepository = new CategorieRepository();
-		
-		AccessoireRepository accessoireRepository = new AccessoireRepository();
-		
-		EspaceRepository espaceRepository = new EspaceRepository();
-		
-		List<Espace> espaces = espaceRepository.findAll();
-		
-		for(Espace espace: espaces)
-		{
-			accessoireRepository.getAllDataEspace(espace);
-		}
-		
-		for(Espace espace: espaces)
-		{
-			System.out.println(espace.getTerrains());
-			
-			for(Terrain ter: espace.getTerrains())
-			{
-				System.out.println(ter.getAccessoires());
-			}
-		}
-		
-		
-		
-		
+	
+		//Promotion_categorieRepository promotion_categorieRepository =  new Promotion_categorieRepository();
+		//List<Promotion_categorie> promotion_categories = promotion_categorieRepository.getAllPromotionCategorieByUser(1l);
+		//System.out.println(promotion_categories);
 		
 	}
 }

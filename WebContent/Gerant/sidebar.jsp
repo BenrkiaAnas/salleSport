@@ -56,6 +56,50 @@
                                
                             </li>
                             
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-hourglass"></i>Planning
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul  
+                                      
+                                    >
+                                    <li>
+                                        <a href="/salleSport/listePlanning" >
+                                            <i class="metismenu-icon"></i> Liste Planning
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/salleSport/createPlanning" >
+                                            <i class="metismenu-icon"></i>Crée Planning
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-clock"></i>Horraire
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul  
+                                      
+                                    >
+                                    <li>
+                                        <a href="/salleSport/listeHorraire" >
+                                            <i class="metismenu-icon"></i> Liste Horraires
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/salleSport/createHorraire" >
+                                            <i class="metismenu-icon"></i>Crée Horraire
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            
                             
                             <li>
                                 <a href="#">
@@ -118,6 +162,17 @@
                                             <i class="metismenu-icon"></i>Crée Promotion
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="/salleSport/affecterPromotion" >
+                                            <i class="metismenu-icon"></i>Affecter Promotion
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="/salleSport/listePromotionCategorie" >
+                                            <i class="metismenu-icon"></i>Liste Affectation Promotion
+                                        </a>
+                                    </li>
+                                    
                                     
                                 </ul>
                             </li>
@@ -141,6 +196,35 @@
                                     </li>
                                     
                                 </ul>
+                            </li>
+                             <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-ticket"></i>Reservation
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul  
+                                      
+                                    >
+                                    <li>
+                                        <a href="/salleSport/reservation" >
+                                            <i class="metismenu-icon"></i> Reservation Terrain
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/salleSport/reservationTournoi" >
+                                            <i class="metismenu-icon"></i>Reservation Tournoi
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                             
+                            </li>
+                            <li>
+                                <a href="/salleSport/clients">
+                                    <i class="metismenu-icon pe-7s-users"></i>Clients
+                                
+                                </a>
+                             
                             </li>
                             
                         </ul>
